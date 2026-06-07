@@ -1,0 +1,6 @@
+{
+  "name": "DevShip",
+  "description": "Premium DevOps-as-a-Service for startups. Get senior DevOps outcomes, AWS cost optimization, and secure infrastructure for a predictable monthly fee.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
