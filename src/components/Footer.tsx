@@ -31,19 +31,19 @@ export default function Footer({ setCurrentTab }: FooterProps) {
               <div className="w-8 h-8 rounded-lg bg-[#4F6EF7]/10 border border-[#4F6EF7]/30 flex items-center justify-center text-[#4F6EF7]">
                 <Terminal className="w-4 h-4" />
               </div>
-              <span className="font-sans font-semibold text-base text-[#F8F8FF]">
-                Dev<span className="text-[#4F6EF7]">Ship</span>
+              <span className="font-sans font-semibold text-base text-[#F8F8FF] font-bold">
+                Atlas<span className="text-[#4F6EF7]">.</span>
               </span>
             </div>
             
             <p className="text-xs leading-relaxed max-w-sm">
-              Your dedicated DevOps team. Designs, secures, optimizes, and manages production-grade AWS setups for a predictable monthly fee. Zero hiring headaches.
+              Discover, optimize, and modernize your complex environments with complete visibility. Atlas is an enterprise-grade Infrastructure Intelligence, Assessment, and Migration platform.
             </p>
 
             <div className="flex flex-col space-y-2.5 pt-2">
               <div className="flex items-center space-x-2 text-[10px] uppercase font-mono">
                 <Shield className="w-3.5 h-3.5 text-[#4F6EF7]" />
-                <span className="text-[#F8F8FF] font-semibold">100% Certified AWS DevOps Specialists</span>
+                <span className="text-[#F8F8FF] font-semibold">Enterprise Infrastructure Intelligence Standard</span>
               </div>
               <div className="flex items-center space-x-2 text-[10px] uppercase font-mono">
                 <EyeOff className="w-3.5 h-3.5 text-[#4F6EF7]" />
@@ -63,7 +63,7 @@ export default function Footer({ setCurrentTab }: FooterProps) {
               </li>
               <li>
                 <button id="footer-link-pricing" onClick={() => navigateToTab('pricing')} className="hover:text-white transition-colors text-left cursor-pointer">
-                  Predictable Tiers
+                  Infrastructure Assessment
                 </button>
               </li>
               <li>
@@ -95,7 +95,7 @@ export default function Footer({ setCurrentTab }: FooterProps) {
                   className="hover:text-white transition-colors text-left cursor-pointer flex items-center space-x-1.5"
                 >
                   <span className="w-1 h-1 bg-[#4F6EF7] rounded-full inline-block"></span>
-                  <span>AWS Optimization Checklist</span>
+                  <span>Infrastructure Optimization Checklist</span>
                 </button>
               </li>
               <li>
@@ -110,7 +110,7 @@ export default function Footer({ setCurrentTab }: FooterProps) {
                   className="hover:text-white transition-colors text-left cursor-pointer flex items-center space-x-1.5"
                 >
                   <span className="w-1 h-1 bg-[#4F6EF7] rounded-full inline-block"></span>
-                  <span>AWS Security Compliance Assessment</span>
+                  <span>Infrastructure Security Assessment</span>
                 </button>
               </li>
               <li>
@@ -163,10 +163,10 @@ export default function Footer({ setCurrentTab }: FooterProps) {
         {/* Bottom Banner */}
         <div className="border-t border-[#1E1E2E] mt-12 pt-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <p className="text-[11px] font-mono whitespace-nowrap">
-            &copy; {new Date().getFullYear()} DevShip operations. All assets protected. AWS partner standard configuration.
+            &copy; {new Date().getFullYear()} Atlas Platforms. All assets protected. Multi-environment secure standard configuration.
           </p>
           <div className="flex items-center space-x-1 text-[10px] font-mono text-zinc-500">
-            <span>Reliability standards: Multi-AZ isolated topologies</span>
+            <span>Reliability standards: Multi-platform hybrid & cloud topologies</span>
           </div>
         </div>
       </div>

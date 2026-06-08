@@ -16,64 +16,76 @@ export default function Services({ setCurrentTab }: ServicesProps) {
   
   const servicesList = [
     {
-      id: 'managed',
-      icon: Server,
-      name: 'Managed AWS Infrastructure Support',
-      tagline: 'Your dedicated DevOps partner. Active incident monitoring and operations.',
-      overview: 'We support the daily operational maintenance of your AWS cloud stack. We configure routine upgrades, database snapshots, credential reviews, log aggregations, and cost visibility controls. We act as an integrated arm of your engineering team, responding based on documented runbooks and clear escalation paths so your developers spend their energy shipping features.',
-      outcome: 'Resilient and stable cluster availability, continuous cost visibility and active optimization of underutilized instances, and structured automation matching team processes.',
-      timeline: 'Continuous. Partnership initiates with audit integration in 48 hours.',
-      pricing: 'Starts at $4,900 / month flat. Zero hidden extras.',
-      deliverables: [
-        'Alerting and notification telemetry configurations with structured escalation paths',
-        'Continuous AWS Cost Explorer analysis to identify and terminate idle resources',
-        'Declarative Terraform module drift checks and monthly state updates',
-        'VPC Security Group updates & IAM permissions auditing and role refinement',
-        'Daily encrypted databases snapshot policy configuration and pass verification',
-        'Weekly logs review across CloudTrail, CloudWatch & Container logs',
-        'Weekly sync call with Senior Cloud Solution Architects'
-      ],
-      color: 'border-indigo-500/20 text-[#4F6EF7]'
-    },
-    {
-      id: 'migration',
+      id: 'discovery',
       icon: Compass,
-      name: 'Cloud Migration & Database Modernization',
-      tagline: 'Migrate layout structures from Heroku, Vercel, or raw EC2 pools with minimized disruption.',
-      overview: 'Heroku and Vercel are ideal for early mockups, but fast-growing startups quickly discover memory limits and high add-on markup fees. We safely migrate your databases, backend container workloads, caches, and CDN assets to highly optimized isolated AWS subnets using standard Docker container definitions. We design the target structure and test deployments in staging beforehand to support a highly stable, smooth transition.',
-      outcome: 'Compute pricing reduced significantly, modular staging replication, and structural control of your own AWS VPC limits.',
-      timeline: 'Fully completed and transitioned in 14 to 21 Business Days.',
-      pricing: 'Fixed project pricing based on container sizes. Usually $9,500 – $14,000.',
+      name: 'Infrastructure Discovery & Assessment',
+      tagline: 'Deep operational mapping and configuration audits for absolute transparency.',
+      overview: 'Our platform automatically discovers and maps infrastructure assets across complex architectures including physical, virtual, and cloud systems to eliminate blind spots. We audit servers, services, security postures, storage parameters, and egress routing, providing actionable, quantitative, and risk-rated diagnostic metrics.',
+      outcome: 'Full configuration clarity, identified risk zones, and a definitive baseline for capacity consolidation.',
+      timeline: 'Completed and mapped within 5 Business Days.',
+      pricing: 'Fixed Assessment Engagement (Scale-aligned).',
       deliverables: [
-        'Complete Dockerization of runtime services (Multi-stage, optimized builds)',
-        'Transition database assets securely using isolated RDS Aurora replicas',
-        'Setup S3 assets migration with private VPC route endpoints (NAT cost reduction)',
-        'Establish automated multi-branch testing pipelines (GitHub staging environments)',
-        'Full DNS transition matching ACM HTTPS certificates and Route 53 aliases',
-        'Complete documentation handover detailing secret parameters management',
-        '2 weeks post-migration DevOps support and performance metric profiling'
+        'Asset Inventory across physical, virtual, and cloud environments',
+        'Automatic multi-tier Dependency Mapping maps and maps of service intersections',
+        'Continuous Risk Assessment locating security drifts and lone ingress doors',
+        'Comprehensive Infrastructure Health Report with benchmark ratings',
+        'C-Suite Executive Summary translating system risks into business cost models'
       ],
       color: 'border-blue-500/20 text-blue-400'
     },
     {
-      id: 'greenfield',
-      icon: Zap,
-      name: 'Greenfield AWS Setup (SOC2/Compliance Ready)',
-      tagline: 'Production-ready, highly secure enterprise AWS cloud setup in 5 Days.',
-      overview: 'Launching a new SaaS or healthtech service? Avoid starting with insecure defaults. We provision an enterprise-ready AWS account structure from scratch using dry Declarative Terraform. We configure isolated public/private VPC partitions, KMS envelope encryption, strict IAM roles mapping, cloud monitoring logs, and continuous deploy automations. The entire template aligns with modern security audits like SOC2 Type II, HIPAA, or ISO 27001.',
-      outcome: 'Rigorous CIS Benchmark compliance-ready infrastructure operational in days. Solid foundation for investor technical due-diligence.',
-      timeline: 'Completed and online in 5 Business Days.',
-      pricing: 'Flat fixed one-time onboarding of $7,500.',
+      id: 'architecture',
+      icon: Server,
+      name: 'Infrastructure Architecture & Design',
+      tagline: 'Custom system layouts designed for continuous availability and technical credibility.',
+      overview: 'We layout highly resilient, enterprise-grade architecture blueprints across bare metal hosting, virtual machines, hypervisors, and multi-cloud providers. Our designs ensure data integrity, maximum resource density, private networking tunnels, and structured access configurations adhering to rigorous uptime guidelines.',
+      outcome: 'Validated high-performance architecture blueprints perfectly tuned to your business operational goals.',
+      timeline: 'Delivered in 5 to 10 Business Days.',
+      pricing: 'Project-based Scope (Environment-scaled).',
       deliverables: [
-        'Isolated Multi-VPC Architecture with private database subnets',
-        'Automated continuous deployment (GitHub Actions -> AWS ECS Fargate)',
-        'Strict IAM Least-Privilege configuration (Eliminating all root-level keys access)',
-        'WAF / AWS Shield perimeter security configuration defending SQL injections',
-        'AWS Secret Manager configs integrating environment files seamlessly',
-        'CloudTrail secure audit logs forwarded directly to encrypted S3 logs pools',
-        '100% complete Terraform states code directory pushed to your private Git repositories'
+        'Bare Metal Architecture & multi-site layout design mapping',
+        'VPS Architecture & private sub-network segregation plans',
+        'High Availability Design eliminating single points of failure across system stacks',
+        'Robust Disaster Recovery Planning with recovery time objective (RTO) targets',
+        'Hybrid Infrastructure Design bridging legacy hardware with cloud endpoints'
+      ],
+      color: 'border-indigo-500/20 text-[#4F6EF7]'
+    },
+    {
+      id: 'modernization',
+      icon: Zap,
+      name: 'Infrastructure Modernization',
+      tagline: 'Transform legacy workloads, hypervisors, and container platforms.',
+      overview: 'Legacy systems limit feature velocity and burn excessive operational budgets. We modernise, cluster, and repackage legacy workloads. This includes transitioning heavy virtualized setups, moving hypervisors, and containerizing monoliths into standard, lightweight, declarative structures.',
+      outcome: 'Platform consolidation, significant compute overhead reduction, and rapid build pipelines.',
+      timeline: 'Executed in 10 to 14 Business Days.',
+      pricing: 'Project-based Scope (Environment-scaled).',
+      deliverables: [
+        'Legacy Infrastructure Transformation consolidating heavy compute stacks',
+        'VMware Modernization and transition to modern hypervisors like Proxmox',
+        'Platform Consolidation scaling down obsolete resource pools',
+        'Performance Optimization identifying slow execution layers and bottleneck subnets',
+        'Infrastructure Refresh Projects deploying state-of-the-art server profiles'
       ],
       color: 'border-emerald-500/20 text-emerald-400'
+    },
+    {
+      id: 'migration',
+      icon: Database,
+      name: 'Migration & Transformation Services',
+      tagline: 'Seamlessly shift environments with absolute compliance and zero downtime.',
+      overview: 'Moving critical production environments demands absolute precision. We handle migrations of databases, container nodes, and legacy networks with zero operational disruption. We thoroughly test pipelines in staging, validating every DNS alias, security firewall, and secret configuration beforehand.',
+      outcome: 'Production data shifted beautifully, verified network boundaries, and zero downtime transitions.',
+      timeline: 'Fully completed in 14 to 21 Business Days.',
+      pricing: 'Custom Monthly Retainer or Fixed Project Pricing.',
+      deliverables: [
+        'Data Center Migrations shifting physical server tasks to modern facilities',
+        'Infrastructure Consolidation reducing sprawling environments to tight units',
+        'Virtualization Migrations from legacy systems into Proxmox or Cloud hypervisors',
+        'Cloud Migrations transitioning workloads cleanly into GCP, AWS, or Azure subnets',
+        'Hybrid Infrastructure Projects establishing secure high-throughput VPN tunnels'
+      ],
+      color: 'border-rose-500/20 text-rose-500'
     }
   ];
 
@@ -92,9 +104,9 @@ export default function Services({ setCurrentTab }: ServicesProps) {
       {/* Intro Header */}
       <section className="text-center max-w-3xl mx-auto space-y-4 pt-12">
         <span className="text-xs font-mono text-[#4F6EF7] uppercase tracking-widest font-semibold block">Full Capabilities Map</span>
-        <h1 className="text-3xl md:text-5xl font-sans font-bold text-[#F8F8FF] tracking-tight">Our Core DevOps Deliverables</h1>
+        <h1 className="text-3xl md:text-5xl font-sans font-bold text-[#F8F8FF] tracking-tight">Infrastructure Intelligence & Modernization</h1>
         <p className="text-sm text-[#8888A0] leading-relaxed">
-          No generic advice. We write operational code, design declarative Terraform structures, and assume absolute responsibility for cloud health of high-growth tech startups.
+          Unlock complete visibility, robust high-availability designs, and seamless legacy transitions across bare metal, hypervisors, and leading global cloud providers.
         </p>
       </section>
 
@@ -137,7 +149,7 @@ export default function Services({ setCurrentTab }: ServicesProps) {
                     <span className="text-xs text-[#F8F8FF] font-semibold block mt-0.5">{srv.timeline}</span>
                   </div>
                   <div className="border-t sm:border-t-0 pt-3 sm:pt-0">
-                    <span className="text-[9px] font-mono text-indigo-400 uppercase block font-semibold">Predictable Cost</span>
+                    <span className="text-[9px] font-mono text-indigo-400 uppercase block font-semibold">Engagement Model</span>
                     <span className="text-xs text-[#F8F8FF] font-bold block mt-0.5">{srv.pricing}</span>
                   </div>
                 </div>

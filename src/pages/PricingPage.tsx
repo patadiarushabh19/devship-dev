@@ -5,8 +5,21 @@
 
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Check, HelpCircle, ChevronDown, Award, Users, ShieldAlert, Cpu, Layers } from 'lucide-react';
-import { PageId, PricingPlan } from '../types';
+import { 
+  Server, 
+  Database, 
+  Network, 
+  ShieldAlert, 
+  Zap, 
+  FileText, 
+  ClipboardList, 
+  ChevronDown, 
+  ArrowRight, 
+  Layers, 
+  Activity, 
+  HelpCircle 
+} from 'lucide-react';
+import { PageId } from '../types';
 import Scheduler from '../components/Scheduler';
 
 interface PricingProps {
@@ -20,93 +33,65 @@ export default function PricingPage({ setCurrentTab }: PricingProps) {
     setActiveFaq(prev => prev === id ? null : id);
   };
 
-  const plans: PricingPlan[] = [
+  const deliverables = [
     {
-      id: 'starter',
-      name: 'Starter Plan',
-      description: 'Ideal for pre-revenue startups needing Greenfield AWS setup and automated deployments.',
-      price: '$2,900',
-      billingFrequency: '/ month',
-      features: [
-        'Complete Greenfield 100% Declarative Terraform setup',
-        'Secure multi-subnet public/private AWS VPC partitioning',
-        'Auto-scaling AWS ECS Fargate tasks deployment configuration',
-        'Automated CI/CD pipelines (GitHub Actions deployment keys)',
-        'Full DNS setup, CDN assets caching, HTTPS SSL provisioning',
-        'Direct connection to AWS secrets manager variables'
-      ],
-      specs: {
-        supportType: 'Dedicated Slack Workspace',
-        responseTime: 'Next-business-day response pathways',
-        deliveryTime: '5 Business Days Initial Onboarding',
-        sla: 'Ongoing scheduled cloud project updates'
-      }
+      title: 'Asset Inventory',
+      desc: 'Automatically discover servers, applications, databases, services, storage systems, and network components.',
+      icon: Database,
+      tag: 'INVENTORY_DISCOVERY'
     },
     {
-      id: 'growth',
-      name: 'Growth Plan',
-      description: 'Our most popular tier. Full-stack active cloud management, monitoring, and ongoing optimization.',
-      price: '$4,900',
-      billingFrequency: '/ month',
-      features: [
-        'Everything in the Starter Plan plus continuous active management',
-        'Routine AWS bills diagnostics targeting cost optimizations',
-        'Telemetry monitoring setup under structured alerts and notification paths',
-        'Weekly deployment optimization guidelines, logs reviews, and database updates',
-        'Monthly security audits with SOC2 framework tracking checklists',
-        'Dedicated Senior Cloud Solution Architects on speed dial'
-      ],
-      specs: {
-        supportType: 'Dedicated Slack Channel',
-        responseTime: 'Escalation paths for priority items',
-        deliveryTime: 'Immediate Active Continuous Operations',
-        sla: 'Designed to reduce operational risk'
-      },
-      isHighlighted: true
+      title: 'Dependency Mapping',
+      desc: 'Visualize how applications, databases, services, and infrastructure components interact.',
+      icon: Network,
+      tag: 'TOPOLOGY_MAPPING'
     },
     {
-      id: 'scale',
-      name: 'Scale Plan',
-      description: 'Designed for Series-A+ tech startups with multi-region scaling and advanced security compliance.',
-      price: '$8,900',
-      billingFrequency: '/ month',
-      features: [
-        'All elements in Growth + Dedicated Enterprise Scale architecture',
-        'Kubernetes setup (EKS/Kubernetes migration execution and scaling)',
-        'Advanced Multi-Region database clustering design (Aurora serverless)',
-        'In-depth penetration security group reviews and active perimeter checks',
-        'Rigorous SOC2 Type II, HIPAA, or ISO 27001 audit readiness prep',
-        'Custom multi-account organization consolidation (AWS Control Tower Setup)'
-      ],
-      specs: {
-        supportType: 'Dedicated Slack & Phone Escalation Pager',
-        responseTime: 'Direct escalation pathways for P1 items',
-        deliveryTime: 'Ongoing Multi-team Engineering Coordination',
-        sla: 'High-availability architecture plans'
-      }
+      title: 'Risk Assessment',
+      desc: 'Identify hidden risks, single points of failure, unsupported systems, security concerns, and migration blockers.',
+      icon: ShieldAlert,
+      tag: 'THREAT_MODELING'
+    },
+    {
+      title: 'Optimization Opportunities',
+      desc: 'Discover underutilized resources, consolidation opportunities, cost reduction potential, and infrastructure improvements.',
+      icon: Zap,
+      tag: 'COST_EFFICIENCY'
+    },
+    {
+      title: 'Migration Readiness Report',
+      desc: 'Understand which workloads are ready for migration and which require remediation.',
+      icon: ClipboardList,
+      tag: 'MIGRATION_TELEMETRY'
+    },
+    {
+      title: 'Executive Summary',
+      desc: 'Receive a business-friendly report with actionable recommendations and strategic insights.',
+      icon: FileText,
+      tag: 'STRATEGIC_OUTCOMES'
     }
   ];
 
-  const pricingFaqs = [
+  const assessmentFaqs = [
     {
-      id: 'hidden-fees',
-      question: 'Are there any hidden costs or setup fees?',
-      answer: 'Zero setup fees. We map our partnerships entirely around transparent flat-rate monthly agreements. You will never receive unexpected invoices detailing "consulting hours" or "overtime configs." The price on this page is exactly what you pay.'
+      id: 'how-long',
+      question: 'How long does an initial discovery engagement require?',
+      answer: 'Typically, discovery and scanning are fully operational within 48 hours of connection credentials setup, with the final comprehensive reports delivered within 10 to 14 business days.'
     },
     {
-      id: 'lock-in',
-      question: 'Do we have a long-term contractual obligation?',
-      answer: 'Absolutely not. All of our plan agreements operate strictly on a month-to-month billing configuration. You are free to upgrade, downgrade, or cancel your partnership at any point with 30 days notice. All IaC code (Terraform states, actions YAMLs) is yours to keep in your private Git repositories.'
+      id: 'credentials-security',
+      question: 'What access level is required for the infrastructure audit?',
+      answer: 'We operate strictly under Read-Only boundaries. We integrate using standardized cross-account ReadOnly IAM roles, VPC metadata scanners, and standard audit parameters. We build our analysis entirely without writing or deleting any state or resources.'
     },
     {
-      id: 'how-do-we-pay',
-      question: 'How are invoice collections handled?',
-      answer: 'We collect payments securely at the start of your billing period via Credit Card, ACH, or wire transfers. Your company pays AWS directly for infrastructure cloud computing bills; DevShip invoices are solely for senior engineering services.'
+      id: 'custom-footprint',
+      question: 'How is the final structural engagement priced?',
+      answer: 'We do not enforce standard startup tiers. Following our initial assessment and discovery review, we present a transparent, environment-scaled engagement proposal tailored exactly to your cloud footprint size, service density, and ongoing operational requirements.'
     },
     {
-      id: 'outgrow',
-      question: 'What happens if we outgrow our current plan boundaries?',
-      answer: 'Startups scale rapidly, and that is our goal. If your container cluster scales from single-endpoint setups to multi-account organizations running advanced AWS EKS networks, we simply coordinate a seamless transition to the Scale tier. Your architecture continues running cleanly without service hiccups.'
+      id: 'nda-requirements',
+      question: 'Do you provide pre-signed NDAs prior to the initial discovery call?',
+      answer: 'Yes, this is standard protocol. We respect the confidentiality of proprietary system maps. You can download and request a mutual pre-signed Non-Disclosure Agreement directly prior to the initial review.'
     }
   ];
 
@@ -123,96 +108,45 @@ export default function PricingPage({ setCurrentTab }: PricingProps) {
     <div className="space-y-24 pb-20">
       
       {/* Page Title */}
-      <section className="text-center max-w-2xl mx-auto space-y-4 pt-12">
-        <span className="text-xs font-mono text-[#4F6EF7] uppercase tracking-widest font-semibold block">Flat Predictable Subscriptions</span>
-        <h1 className="text-3xl md:text-5xl font-sans font-bold text-[#F8F8FF] tracking-tight">Fair, Developer-First Pricing</h1>
-        <p className="text-sm text-[#8888A0] leading-relaxed">
-          Avoid the high-risk gamble of internal DevOps hiring cycles. Choose a flat predictable plan and get senior infrastructure engineering immediately.
+      <section className="text-center max-w-3xl mx-auto space-y-4 pt-12">
+        <span className="text-xs font-mono text-[#4F6EF7] uppercase tracking-widest font-semibold block">
+          Infrastructure Assessment & Discovery Engagement
+        </span>
+        <h1 className="text-3xl md:text-5xl font-sans font-bold text-[#F8F8FF] tracking-tight">
+          Understand Your Infrastructure Before Making Critical Decisions
+        </h1>
+        <p className="text-sm md:text-base text-[#8888A0] leading-relaxed max-w-2xl mx-auto">
+          Gain complete visibility into your infrastructure, dependencies, risks, optimization opportunities, and migration readiness before investing in modernization, cloud adoption, consolidation, or migration initiatives.
         </p>
       </section>
 
-      {/* Pricing Cards */}
+      {/* Deliverables Section: Premium Cards */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {plans.map((plan) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {deliverables.map((item, idx) => {
+            const Icon = item.icon;
             return (
-              <div
-                key={plan.id}
-                className={`relative bg-[#111118] border rounded-xl p-6 flex flex-col justify-between shadow-2xl transition-all ${
-                  plan.isHighlighted 
-                    ? 'border-[#4F6EF7] shadow-indigo-600/[0.04] scale-100 lg:scale-[1.03] z-10' 
-                    : 'border-[#1E1E2E] hover:border-zinc-700'
-                }`}
+              <div 
+                key={idx}
+                className="bg-[#111118] border border-[#1E1E2E] rounded-xl p-6 hover:border-zinc-700 transition-colors flex flex-col justify-between space-y-6"
               >
-                {/* Highlight Badge */}
-                {plan.isHighlighted && (
-                  <span className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-[#4F6EF7] text-white text-[10px] font-mono tracking-widest uppercase py-1 px-3.5 rounded-full font-bold">
-                    RECOMMENDED STARTUP PLAN
-                  </span>
-                )}
-
-                <div className="space-y-6">
-                  {/* Title & Price */}
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-sans font-bold text-[#F8F8FF]">{plan.name}</h3>
-                    <p className="text-xs text-[#8888A0] leading-relaxed min-h-[40px]">{plan.description}</p>
-                    
-                    <div className="flex items-baseline space-x-1.5 pt-4">
-                      <span className="text-3xl md:text-4xl font-mono text-[#F8F8FF] font-bold">{plan.price}</span>
-                      <span className="text-xs font-mono text-[#8888A0]">{plan.billingFrequency}</span>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="w-10 h-10 rounded-lg bg-[#0A0A0F] border border-indigo-500/10 flex items-center justify-center text-[#4F6EF7]">
+                      <Icon className="w-5 h-5" />
                     </div>
+                    <span className="text-[9px] font-mono font-medium text-[#8888A0] uppercase tracking-wider bg-[#0a0a0f] px-2 py-0.5 rounded border border-[#1e1e2e]">
+                      {item.tag}
+                    </span>
                   </div>
-
-                  {/* Support & Reliability Framework block */}
-                  <div className="bg-[#0A0A0F] border border-[#1E1E2E]/80 rounded-lg p-3.5 space-y-2.5">
-                    <span className="text-[10px] font-mono text-[#4F6EF7] uppercase tracking-wider block font-semibold">Support & Reliability Framework</span>
-                    
-                    <div className="space-y-1.5 text-[11px] font-mono text-[#8888A0]">
-                      <div>
-                        <span className="text-white block">Channels:</span>
-                        <span>{plan.specs.supportType}</span>
-                      </div>
-                      <div className="border-t border-[#1E1E2E] pt-1.5 mt-1.5">
-                        <span className="text-white block">Target Response:</span>
-                        <span className="text-indigo-400 font-semibold">{plan.specs.responseTime}</span>
-                      </div>
-                      <div className="border-t border-[#1E1E2E] pt-1.5 mt-1.5">
-                        <span className="text-white block">Service Standard:</span>
-                        <span>{plan.specs.sla}</span>
-                      </div>
-                    </div>
+                  <div className="space-y-1.5">
+                    <h3 className="text-sm font-sans font-bold text-[#F8F8FF] uppercase tracking-tight">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs text-[#8888A0] leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
-
-                  {/* Divider */}
-                  <div className="border-t border-[#1E1E2E]" />
-
-                  {/* Feature Lists */}
-                  <div className="space-y-3">
-                    <span className="text-[10px] font-mono text-[#8888A0] uppercase block font-semibold">Key Operations Included</span>
-                    
-                    <div className="space-y-2">
-                      {plan.features.map((feat, fIdx) => (
-                        <div key={fIdx} className="flex items-start space-x-2 text-xs text-[#8888A0]">
-                          <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                          <span className="leading-snug text-zinc-300">{feat}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-8">
-                  <button
-                    id={`btn-select-plan-${plan.id}`}
-                    onClick={triggerScrollToContact}
-                    className={`w-full text-center py-3 rounded-lg text-xs font-semibold cursor-pointer transition-all ${
-                      plan.isHighlighted 
-                        ? 'bg-[#4F6EF7] hover:bg-[#4d69eb] text-white shadow-xl shadow-[#4F6EF7]/10' 
-                        : 'bg-[#1E1E2E] hover:bg-[#222233] text-white border border-[#1E1E2E]'
-                    }`}
-                  >
-                    Select {plan.name} Package
-                  </button>
                 </div>
               </div>
             );
@@ -220,15 +154,40 @@ export default function PricingPage({ setCurrentTab }: PricingProps) {
         </div>
       </section>
 
-      {/* Pricing FAQs Accordion below prices */}
-      <section className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      {/* Trust Positioning Block */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-[#111118] border border-[#1E1E2E] rounded-xl p-8 md:p-12 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#4F6EF7]/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="max-w-3xl space-y-4">
+            <span className="text-[10px] font-mono text-[#4F6EF7] uppercase tracking-wider font-semibold block">
+              ENGAGEMENT PRINCIPLES
+            </span>
+            <h2 className="text-xl md:text-2xl font-sans font-bold text-[#F8F8FF] tracking-tight">
+              Every Infrastructure Environment Is Unique
+            </h2>
+            <p className="text-xs md:text-sm text-[#8888A0] leading-relaxed">
+              Infrastructure complexity varies significantly across organizations. Our team evaluates infrastructure size, architecture complexity, technology stack, operational requirements, and business objectives before recommending the most suitable engagement model.
+            </p>
+            <p className="text-xs md:text-sm text-[#8888A0] leading-relaxed">
+              This ensures recommendations remain accurate, relevant, and aligned with business outcomes. We do not apply rigid cookie-cutter packages to mature network setups.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center space-y-2">
-          <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block font-semibold">Underwriting details</span>
-          <h2 className="text-2xl font-sans font-bold text-[#F8F8FF] tracking-tight">Billing & Agreement FAQ</h2>
+          <span className="text-xs font-mono text-[#4F6EF7] uppercase tracking-widest block font-semibold">
+            Operational Boundaries
+          </span>
+          <h2 className="text-2xl font-sans font-bold text-[#F8F8FF] tracking-tight">
+            Engagement Details & Protocols
+          </h2>
         </div>
 
         <div className="space-y-3">
-          {pricingFaqs.map((faq) => {
+          {assessmentFaqs.map((faq) => {
             const isOpen = activeFaq === faq.id;
             return (
               <div 
@@ -236,7 +195,7 @@ export default function PricingPage({ setCurrentTab }: PricingProps) {
                 className="bg-[#111118] border border-[#1E1E2E] rounded-lg overflow-hidden transition-all duration-200"
               >
                 <button
-                  id={`pricing-faq-toggle-${faq.id}`}
+                  id={`assessment-faq-toggle-${faq.id}`}
                   onClick={() => toggleFaq(faq.id)}
                   className="w-full text-left p-4 flex items-center justify-between text-xs md:text-sm font-sans font-semibold text-[#F8F8FF] hover:bg-[#1E1E2E]/30 transition-colors cursor-pointer"
                 >
@@ -254,14 +213,58 @@ export default function PricingPage({ setCurrentTab }: PricingProps) {
         </div>
       </section>
 
-      {/* Final Scheduler wrapper */}
+      {/* Primary CTA Section & Scheduler */}
       <section id="scheduler-section" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-mono text-[#4F6EF7] uppercase tracking-widest block font-semibold">Secure Your Time Slot</span>
-          <h2 className="text-2xl md:text-3xl font-sans font-bold text-[#F8F8FF] tracking-tight">Schedule Your Account Review</h2>
-          <p className="text-xs text-[#8888A0]">Ready to deploy? Pick a business day to schedule a secure screen mapping review of waste areas.</p>
+        <div className="bg-[#111118] border border-[#1E1E2E] rounded-xl p-8 md:p-12 text-center max-w-4xl mx-auto space-y-6">
+          <div className="space-y-2 max-w-xl mx-auto">
+            <span className="text-xs font-mono text-[#4F6EF7] uppercase tracking-widest block font-semibold">
+              Primary Engagement Channel
+            </span>
+            <h2 className="text-2xl md:text-3xl font-sans font-bold text-[#F8F8FF] tracking-tight">
+              Schedule an Infrastructure Discovery Session
+            </h2>
+            <p className="text-xs md:text-sm text-[#8888A0] leading-relaxed">
+              Speak with an infrastructure specialist to discuss your environment, challenges, and modernization goals.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <button 
+              id="btn-discovery-call"
+              onClick={() => {
+                const form = document.getElementById('discovery-scheduler');
+                if (form) {
+                  form.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="bg-[#4F6EF7] hover:bg-[#4d69eb] text-white text-xs font-semibold px-6 py-3 rounded-lg flex items-center space-x-2 transition-all cursor-pointer shadow-lg shadow-indigo-600/10"
+            >
+              <span>Book Discovery Call</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+            <button 
+              id="btn-request-assessment"
+              onClick={() => {
+                const s = document.getElementById('contact-form-anchor');
+                if (s) {
+                  s.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  setCurrentTab('contact');
+                }
+              }}
+              className="bg-[#1E1E2E] hover:bg-[#252538] text-white text-xs font-semibold px-6 py-3 rounded-lg border border-[#1E1E2E] transition-colors cursor-pointer"
+            >
+              Request Assessment
+            </button>
+          </div>
         </div>
-        <div className="max-w-4xl mx-auto">
+
+        {/* Calendar Scheduler Card */}
+        <div id="discovery-scheduler" className="max-w-4xl mx-auto pt-4">
+          <div className="text-center max-w-xl mx-auto space-y-2 mb-8">
+            <span className="text-xs font-mono text-zinc-500 block">SUPPORTED INTEGRATION</span>
+            <h3 className="text-lg font-sans font-bold text-[#F8F8FF]">Select a Standard Review Slot</h3>
+          </div>
           <Scheduler />
         </div>
       </section>

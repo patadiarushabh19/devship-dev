@@ -37,7 +37,7 @@ export default function Navbar({ currentTab, setCurrentTab }: NavbarProps) {
 
   const menuItems: { id: PageId; label: string }[] = [
     { id: 'services', label: 'Services' },
-    { id: 'pricing', label: 'Pricing' },
+    { id: 'pricing', label: 'Assessment' },
     { id: 'about', label: 'About' },
     { id: 'blog', label: 'Blog' }
   ];
@@ -61,8 +61,8 @@ export default function Navbar({ currentTab, setCurrentTab }: NavbarProps) {
             <div className="w-8 h-8 rounded-lg bg-[#4F6EF7] flex items-center justify-center text-white shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform duration-200">
               <Terminal className="w-4 h-4" />
             </div>
-            <span className="font-sans font-semibold text-lg tracking-tight text-[#F8F8FF] group-hover:text-white">
-              Dev<span className="text-[#4F6EF7]">Ship</span>
+            <span className="font-sans font-semibold text-lg tracking-tight text-[#F8F8FF] group-hover:text-white font-bold">
+              Atlas<span className="text-[#4F6EF7]">.</span>
             </span>
           </div>
 
@@ -114,7 +114,7 @@ export default function Navbar({ currentTab, setCurrentTab }: NavbarProps) {
               }}
               className="bg-[#4F6EF7] hover:bg-[#4d69eb] text-white text-xs font-medium px-5 py-2.5 rounded-lg transition-all flex items-center space-x-1.5 cursor-pointer shadow-lg shadow-indigo-600/10"
             >
-              <span>Book Your Free AWS Audit</span>
+              <span>Book Discovery Assessment</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
@@ -181,7 +181,7 @@ export default function Navbar({ currentTab, setCurrentTab }: NavbarProps) {
                 }}
                 className="w-full bg-[#4F6EF7] hover:bg-[#4d69eb] text-center text-white text-xs font-semibold py-3 rounded-lg flex items-center justify-center space-x-2"
               >
-                <span>Book Your Free AWS Audit</span>
+                <span>Book Discovery Assessment</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>

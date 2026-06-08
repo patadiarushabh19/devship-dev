@@ -26,42 +26,42 @@ export default function Home({ setCurrentTab }: HomeProps) {
 
   const problemCards = [
     {
-      title: 'Bleeding AWS Outlays',
-      problem: 'Oversized EC2 instances, redundant Multi-AZ configs in staging, and unassigned EBS disk pools run unnoticed.',
-      impact: 'Up to 50% of the standard monthly cloud bill is entirely wasted compute.',
-      businessCost: '$1,200 – $6,500 monthly capital burn without product outputs.',
+      title: 'Runaway Infrastructure Outlays',
+      problem: 'Oversized bare metal nodes, redundant hypervisor CPU allocations, and unassigned storage pools run unnoticed.',
+      impact: 'Up to 50% of monthly operating system budget is entirely wasted hardware density overhead.',
+      businessCost: 'Substantial monthly capital burn without product velocity outputs.',
       icon: DollarSign,
       color: 'text-amber-400 border-amber-500/20'
     },
     {
       title: 'Brittle Deployment Pipelines',
-      problem: 'Brittle scripting with manual SSH deployments, unversioned configs, and failing build packages.',
-      impact: 'Product updates take 45+ minutes with high deployment failure rates and sudden outages.',
+      problem: 'Brittle manual SSH deployment routines, unversioned configurations, and failing build packages.',
+      impact: 'Product updates take hours with high failure rates and sudden service interruptions.',
       businessCost: 'Engineering momentum stalled. Lost customer confidence during outages.',
       icon: ShieldAlert,
       color: 'text-rose-400 border-rose-500/20'
     },
     {
       title: 'Critical Security Risks',
-      problem: 'Over-privileged static root IAM keys, exposed RDS/SSH network ports, and empty audit logs.',
-      impact: 'High exposure to malicious port scans, credentials leakage, and API exploitation.',
+      problem: 'Over-privileged static root keys, exposed database/SSH network ports, and empty system logs.',
+      impact: 'High exposure to continuous port scans, system compromises, and security exploits.',
       businessCost: 'Devastating system compromises and contract-ending client liability.',
       icon: FileLock,
       color: 'text-[#ef4444] border-red-500/20'
     },
     {
-      title: 'DevOps Hiring Bottlenecks',
-      problem: 'Spending 3-6 months searching for limited senior DevOps talent demanding $180K+ in payroll.',
-      impact: 'Core developers are distracted from product velocity to play amateur sysadmin.',
-      businessCost: 'Project launch timelines delayed by 4-6 months, slowing market traction.',
+      title: 'Hardware Optimization Hurdles',
+      problem: 'Struggling to balance density guidelines, virtualization licenses, or migration mapping on your own.',
+      impact: 'Core developers are distracted from product velocity to play amateur infrastructure administrators.',
+      businessCost: 'Project launch timelines delayed, reducing competitive advantage.',
       icon: Users,
       color: 'text-blue-400 border-blue-500/20'
     }
   ];
 
   const comparisonData = [
-    { metric: 'Avg. Fully Burdened SaaS Cost', hire: '$180K – $220K / yr', freelancer: '$140 – $200 / hr (Bespoke)', devship: 'Fixed predictable monthly fee. Zero equity.', highlight: true },
-    { metric: 'Time to Initiate Setup', hire: '90 – 120 Days (Search & Onboard)', freelancer: '14 – 30 Days (Availability-dependent)', devship: 'Structured onboarding. Operations online within 48 hrs.', highlight: true },
+    { metric: 'Avg. Operational Overhead', hire: 'High constant payroll burdens', freelancer: 'Bespoke custom terms (inconsistent)', devship: 'Scale-aligned discovery engagements or clear projects.', highlight: true },
+    { metric: 'Time to Initiate Setup', hire: '90 – 120 Days (Search & Onboard)', freelancer: '14 – 30 Days (Availability-dependent)', devship: 'Onboarding starts within 48 business hours.', highlight: true },
     { metric: 'Expertise Footprint', hire: 'Limited to single engineer experience profile', freelancer: 'Varies. Prone to shortcutting.', devship: 'Collective knowledge of veteran senior DevOps architects.', highlight: true },
     { metric: 'Continuous Availability', hire: 'Prone to vacation, illness, and attrition gaps', freelancer: 'Vanishes as soon as contract hourly cap finishes', devship: 'Continuous monitoring and structured overlapping support workflows.', highlight: true },
     { metric: 'Infrastructure Risk', hire: 'High bottleneck of a single engineer setup silo', freelancer: 'Left with undocumented customized infrastructure', devship: 'Absolute knowledge sharing. Standard clean declarative IaC.', highlight: true }
@@ -71,39 +71,39 @@ export default function Home({ setCurrentTab }: HomeProps) {
     {
       id: 'internal',
       question: 'Why shouldn’t we simply recruit a full-time Senior DevOps engineer?',
-      answer: 'Hiring a full-time Devops headcount is highly inefficient for pre-scale companies. Aside from costing over $200K/year loaded, once secure pipelines and standardized Terraform containers are provisioned, the maintenance footprint of pre-scale startups requires under 5 hours per month. Under DevShip, you get enterprise senior outcomes without the payroll bloat.'
+      answer: 'Hiring a full-time Senior DevOps headcount is often inefficient for pre-scale companies. Aside from costing hefty salaries, once secure pipelines and standardized Terraform templates are provisioned, the continuous maintenance of stable systems require minimal overhead. With Atlas, you get premium enterprise architecture insights without the payroll bloat.'
     },
     {
-      id: 'already-aws',
-      question: 'What if we already have a functional custom AWS architecture?',
-      answer: 'Perfect. We do not destroy working setups. We execute an instant, zero-touch Read-Only Cloud Audit to target over-provisioned nodes, slow NAT routing tables, and loose IAM roles. We then draft a staging branch to migrate structures modularly with zero operational downtime.'
+      id: 'already-custom',
+      question: 'What if we already have a functional custom setup?',
+      answer: 'Perfect. We do not destroy working setups. We execute an initial zero-touch, read-only discovery process to map asset pools, identify security drifts, and optimize compute footprints cleanly.'
     },
     {
       id: 'ownership',
-      question: 'Do we retain 100% ownership of our AWS accounts?',
-      answer: 'Absolutely. We do not host your setups under our umbrella accounts. You retain full root administration and billing ownership of your AWS accounts. We coordinate access securely via AWS IAM Cross-Account Roles with automated credentials rotation. You can revoke DevShip permission keys instantly in a single click.'
+      question: 'Do we retain 100% ownership of our accounts and assets?',
+      answer: 'Absolutely. We do not host your setups under our umbrella. You retain absolute credentials and administrative ownership of all machines and nodes. We access configurations securely using designated Least Privilege roles. You can revoke access keys instantly in one click.'
     },
     {
       id: 'cancel',
       question: 'What occurs if we decide to cancel our partnership?',
-      answer: 'No lock-ins. All IaC code (Terraform templates, Dockerfiles, GitHub Actions YAML scripts, AWS SSM configs) is checked directly into your private repos. Your environment is completely native, formatted to industry-standard benchmarks. You retain your infrastructure cleanly with zero technical translation problems.'
+      answer: 'No lock-ins. All IaC code (Terraform templates, Dockerfiles, pipeline configs) is checked directly into your private repositories. Your environment resides completely native, cleanly formatted to standard open benchmarks with zero technical translation barriers.'
     },
     {
       id: 'k8s',
-      question: 'Can your team support complex Kubernetes (EKS/ECS) environments?',
-      answer: 'Yes. We are certified Kubernetes Administrators (CKA). We transition complex microservices to containerized AWS setups. Depending on scaling parameters, we often advise high-performance, lower-overhead models like AWS ECS Fargate, which reduces maintenance work by 90% compared to heavy Kubernetes configurations.'
+      question: 'Can your platform support complex virtualization and container environments?',
+      answer: 'Yes. We support physical hypervisors like VMware or Proxmox alongside Kubernetes, Docker clusters, VPS tiers, and bare metal hosts. We match resources perfectly to your operational constraints.'
     }
   ];
 
   const techIcons = [
-    { name: 'Terraform', desc: 'Secure IaC Declarations' },
-    { name: 'AWS Cloud', desc: 'Enterprise Stack Foundations' },
-    { name: 'Docker / Containers', desc: 'Isolated Portable Compute' },
-    { name: 'AWS ECS Fargate', desc: 'Serverless Managed Scaling' },
-    { name: 'GitHub Actions', desc: 'Continuous Delivery Pipelines' },
-    { name: 'AWS Aurora DB', desc: 'Auto-Scaling Relational Subnets' },
-    { name: 'Prometheus / Grafana', desc: 'Enterprise Health telemetry' },
-    { name: 'AWS Shield / WAF', desc: 'Realtime Perimeter Protection' }
+    { name: 'Terraform & IaC', desc: 'Secure Infrastructure Code' },
+    { name: 'VMware & Proxmox', desc: 'Modern Hypervisor Clustering' },
+    { name: 'Docker / Kubernetes', desc: 'Isolated Container Workloads' },
+    { name: 'Bare Metal & Dedicated', desc: 'High-Density Compute Hosts' },
+    { name: 'Multi-Cloud Connectors', desc: 'Seamless Hybrid Overlays' },
+    { name: 'High-Availability Pools', desc: 'Fail-Safe Replication Subnets' },
+    { name: 'Prometheus / Grafana', desc: 'Centralized Health Telemetry' },
+    { name: 'Identity & Access Controls', desc: 'Zero-Trust Bastion Security' }
   ];
 
   return (
@@ -125,7 +125,7 @@ export default function Home({ setCurrentTab }: HomeProps) {
               className="inline-flex items-center space-x-2 bg-indigo-500/10 border border-indigo-500/20 px-3 py-1 rounded-full text-indigo-400 text-xs font-mono tracking-tight"
             >
               <Award className="w-3.5 h-3.5" />
-              <span>DevOps-as-a-Service for Series-A & seed Startups</span>
+              <span>Enterprise Infrastructure Discovery & Assessment Platform</span>
             </motion.div>
 
             <motion.h1 
@@ -134,8 +134,8 @@ export default function Home({ setCurrentTab }: HomeProps) {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-6xl font-sans font-bold text-[#F8F8FF] tracking-tight leading-none"
             >
-              Stop Managing AWS. <br />
-              <span className="text-[#4F6EF7]">Start Shipping Product.</span>
+              Understand Your Infrastructure <br />
+              <span className="text-[#4F6EF7]">Before Making Critical Decisions.</span>
             </motion.h1>
 
             <motion.p 
@@ -144,7 +144,7 @@ export default function Home({ setCurrentTab }: HomeProps) {
               transition={{ delay: 0.2 }}
               className="text-sm md:text-base text-[#8888A0] max-w-2xl leading-relaxed mt-2"
             >
-              DevShip is your dedicated remote DevOps team. We design, manage, secure, and optimize AWS cloud setups for a predictable monthly fee. Get senior infrastructure engineering without high hiring headaches.
+              Atlas is an Infrastructure Intelligence, Assessment, Modernization, and Migration Platform. Gain deep operational visibility into bare metal, legacy hypervisors, container hosts, or multi-cloud environments.
             </motion.p>
 
             <motion.div 
@@ -160,15 +160,22 @@ export default function Home({ setCurrentTab }: HomeProps) {
                 }}
                 className="bg-[#4F6EF7] hover:bg-[#4d69eb] text-white text-xs font-semibold px-6 py-3.5 rounded-lg flex items-center space-x-2 transition-all cursor-pointer shadow-xl shadow-indigo-600/15"
               >
-                <span>Book Your Free AWS Audit</span>
+                <span>Book Discovery Assessment</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
               <button
                 id="hero-cta-pricing"
-                onClick={() => setCurrentTab('pricing')}
+                onClick={() => {
+                  const s = document.getElementById('checklist-block');
+                  if (s) {
+                    s.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    setCurrentTab('services');
+                  }
+                }}
                 className="text-xs text-[#8888A0] hover:text-[#F8F8FF] font-mono border border-[#1E1E2E] bg-[#111118] px-6 py-3.5 rounded-lg transition-colors cursor-pointer"
               >
-                See Predictable Pricing
+                Launch Self-Assessment
               </button>
             </motion.div>
 
@@ -249,11 +256,11 @@ export default function Home({ setCurrentTab }: HomeProps) {
         </div>
       </section>
 
-      {/* SECTION 3: THE STRATEGIC WHY DEVSHIP */}
+      {/* SECTION 3: THE STRATEGIC WHY ATLAS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <span className="text-xs font-mono text-[#4F6EF7] uppercase tracking-widest font-semibold block">Market Alternatives comparison</span>
-          <h2 className="text-2xl md:text-3xl font-sans font-bold text-[#F8F8FF] tracking-tight">How DevShip Restructures Your DevOps Stack</h2>
+          <h2 className="text-2xl md:text-3xl font-sans font-bold text-[#F8F8FF] tracking-tight">How Atlas Restructures Your DevOps Stack</h2>
           <p className="text-xs md:text-sm text-[#8888A0]">Compare standard options to locate your most capital-efficient team model.</p>
         </div>
 
@@ -265,7 +272,7 @@ export default function Home({ setCurrentTab }: HomeProps) {
                 <th className="p-4 text-xs font-mono text-[#8888A0] uppercase w-[28%]">Comparative Parameter</th>
                 <th className="p-4 text-xs font-mono text-[#8888A0] uppercase w-[24%]">1 Full-Time Employee</th>
                 <th className="p-4 text-xs font-mono text-[#8888A0] uppercase w-[24%]">Bespoke Freelancer</th>
-                <th className="p-4 text-xs font-mono text-indigo-400 uppercase w-[24%] bg-indigo-500/[0.04]">DevShip Advantage</th>
+                <th className="p-4 text-xs font-mono text-indigo-400 uppercase w-[24%] bg-indigo-500/[0.04]">Atlas Advantage</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-[#1E1E2E] text-xs">
@@ -319,21 +326,21 @@ export default function Home({ setCurrentTab }: HomeProps) {
           {/* Card 1 */}
           <div className="bg-[#111118] border border-[#1E1E2E] rounded-xl p-6 space-y-6 flex flex-col justify-between hover:border-zinc-700 transition-colors">
             <div className="space-y-4">
-              <span className="text-[10px] font-mono text-[#4F6EF7] uppercase px-2 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20 inline-block font-semibold">Continuous Operations</span>
-              <h3 className="text-lg font-sans font-bold text-[#F8F8FF]">Managed AWS Infrastructure</h3>
+              <span className="text-[10px] font-mono text-[#4F6EF7] uppercase px-2 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20 inline-block font-semibold">Asset Auditing</span>
+              <h3 className="text-lg font-sans font-bold text-[#F8F8FF]">Infrastructure Discovery & Assessment</h3>
               <p className="text-xs text-[#8888A0] leading-relaxed">
-                24/7 dedicated system administrators managing backups, configuration drifts, security upgrades, log aggregations, and active incidents. We absorb your daily operational operations so your developers write business logic.
+                Automatic multi-tier asset enumeration and dependency mapping. We analyze bare metal, virtual machine hypervisors, and multi-cloud setups to locate unmapped workloads and configuration drifts.
               </p>
               <div className="space-y-2 pt-2">
                 <span className="text-[10px] font-mono text-indigo-400 uppercase block font-semibold">Standard Outcomes</span>
                 <div className="space-y-1.5 text-xs text-[#F8F8FF]">
                   <div className="flex items-center space-x-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#4F6EF7]" />
-                    <span>Cost optimization up to 70%</span>
+                    <span>Comprehensive dependency maps</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#4F6EF7]" />
-                    <span>Real-time monitoring telemetry</span>
+                    <span>Quantitative security audit report</span>
                   </div>
                 </div>
               </div>
@@ -342,10 +349,10 @@ export default function Home({ setCurrentTab }: HomeProps) {
             <div className="pt-6 border-t border-[#1E1E2E] flex items-center justify-between">
               <div>
                 <span className="text-[9px] font-mono text-[#8888A0] block">Delivery timeline</span>
-                <span className="text-xs font-sans text-[#F8F8FF] font-medium">On-going continuous</span>
+                <span className="text-xs font-sans text-[#F8F8FF] font-medium">Mapped in 5 Business Days</span>
               </div>
-              <button onClick={() => setCurrentTab('pricing')} className="bg-[#1E1E2E] hover:bg-[#252538] text-white text-xs px-3.5 py-1.5 rounded transition-colors cursor-pointer-button font-medium">
-                See Pricing
+              <button onClick={() => setCurrentTab('services')} className="bg-[#1E1E2E] hover:bg-[#252538] text-white text-xs px-3.5 py-1.5 rounded transition-colors cursor-pointer font-medium">
+                See Scale
               </button>
             </div>
           </div>
@@ -353,21 +360,21 @@ export default function Home({ setCurrentTab }: HomeProps) {
           {/* Card 2 */}
           <div className="bg-[#111118] border border-[#1E1E2E] rounded-xl p-6 space-y-6 flex flex-col justify-between hover:border-zinc-700 transition-colors">
             <div className="space-y-4">
-              <span className="text-[10px] font-mono text-[#4F6EF7] uppercase px-2 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20 inline-block font-semibold">System Migration</span>
-              <h3 className="text-lg font-sans font-bold text-[#F8F8FF]">Cloud Migration & Drift Auditing</h3>
+              <span className="text-[10px] font-mono text-[#4F6EF7] uppercase px-2 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20 inline-block font-semibold">System Modernization</span>
+              <h3 className="text-lg font-sans font-bold text-[#F8F8FF]">Infrastructure Modernization</h3>
               <p className="text-xs text-[#8888A0] leading-relaxed">
-                Shifting platforms cleanly from Heroku, Vercel, or digital ocean to isolated AWS setups. We containerize core codes into Docker structures, map variables to AWS Secrets Manager, and setup high-fidelity databases with zero downtime.
+                Transform clumsy virtual machine structures or legacy setups into sleek container task pools. Modernize VMware loads to Proxmox, optimize compute pools, and isolate network subnets.
               </p>
               <div className="space-y-2 pt-2">
-                <span className="text-[10px] font-mono text-indigo-400 uppercase block font-semibold font-semibold">Standard Outcomes</span>
+                <span className="text-[10px] font-mono text-indigo-400 uppercase block font-semibold">Standard Outcomes</span>
                 <div className="space-y-1.5 text-xs text-[#F8F8FF]">
                   <div className="flex items-center space-x-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#4F6EF7]" />
-                    <span>Total compute pricing cut in half</span>
+                    <span>Platform consolidation & cost efficiency</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#4F6EF7]" />
-                    <span>Reproducible local staging setups</span>
+                    <span>Reproducible local staging clusters</span>
                   </div>
                 </div>
               </div>
@@ -376,10 +383,10 @@ export default function Home({ setCurrentTab }: HomeProps) {
             <div className="pt-6 border-t border-[#1E1E2E] flex items-center justify-between">
               <div>
                 <span className="text-[9px] font-mono text-[#8888A0] block">Delivery timeline</span>
-                <span className="text-xs font-sans text-[#F8F8FF] font-medium">Completed in 14-21 Days</span>
+                <span className="text-xs font-sans text-[#F8F8FF] font-medium">Delivered in 10-14 Days</span>
               </div>
-              <button onClick={() => setCurrentTab('services')} className="bg-[#1E1E2E] hover:bg-[#252538] text-white text-xs px-3.5 py-1.5 rounded transition-colors cursor-pointer-button font-medium">
-                See Deliverables
+              <button onClick={() => setCurrentTab('services')} className="bg-[#1E1E2E] hover:bg-[#252538] text-white text-xs px-3.5 py-1.5 rounded transition-colors cursor-pointer font-medium">
+                See Scope
               </button>
             </div>
           </div>
@@ -387,21 +394,21 @@ export default function Home({ setCurrentTab }: HomeProps) {
           {/* Card 3 */}
           <div className="bg-[#111118] border border-[#1E1E2E] rounded-xl p-6 space-y-6 flex flex-col justify-between hover:border-zinc-700 transition-colors">
             <div className="space-y-4">
-              <span className="text-[10px] font-mono text-[#4F6EF7] uppercase px-2 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20 inline-block font-semibold font-semibold">VPC Greenfield Code</span>
-              <h3 className="text-lg font-sans font-bold text-[#F8F8FF]">Greenfield AWS Launch</h3>
+              <span className="text-[10px] font-mono text-[#4F6EF7] uppercase px-2 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20 inline-block font-semibold">Zero-Downtime Transition</span>
+              <h3 className="text-lg font-sans font-bold text-[#F8F8FF]">Migration & Transformation</h3>
               <p className="text-xs text-[#8888A0] leading-relaxed">
-                Designing highly secure, enterprise-grade architecture blueprints using 100% declarative Terraform. Ready for HIPAA, SOC2 Type II, or GDPR benchmarks. Complete isolated VPC structure with continuous deploy tooling.
+                Shift complex workloads across hosting boundaries with absolute confidence. Safe database failovers, private tunnel setups, and rolling container deployments with validated ingress gates.
               </p>
               <div className="space-y-2 pt-2">
                 <span className="text-[10px] font-mono text-indigo-400 uppercase block font-semibold">Standard Outcomes</span>
                 <div className="space-y-1.5 text-xs text-[#F8F8FF]">
                   <div className="flex items-center space-x-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#4F6EF7]" />
-                    <span>Compliance ready CIS architecture</span>
+                    <span>Verified data migration with zero downtime</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#4F6EF7]" />
-                    <span>Automated deploy pipelines online</span>
+                    <span>Completed standard documentation handover</span>
                   </div>
                 </div>
               </div>
@@ -410,9 +417,9 @@ export default function Home({ setCurrentTab }: HomeProps) {
             <div className="pt-6 border-t border-[#1E1E2E] flex items-center justify-between">
               <div>
                 <span className="text-[9px] font-mono text-[#8888A0] block">Delivery timeline</span>
-                <span className="text-xs font-sans text-[#F8F8FF] font-medium">Delivered within 5 Business Days</span>
+                <span className="text-xs font-sans text-[#F8F8FF] font-medium">Fully completed in 14-21 Days</span>
               </div>
-              <button onClick={() => setCurrentTab('services')} className="bg-[#1E1E2E] hover:bg-[#252538] text-white text-xs px-3.5 py-1.5 rounded transition-colors cursor-pointer-button font-medium">
+              <button onClick={() => setCurrentTab('services')} className="bg-[#1E1E2E] hover:bg-[#252538] text-white text-xs p-1.5 px-3.5 rounded transition-colors cursor-pointer font-medium">
                 See Scope
               </button>
             </div>
@@ -463,7 +470,7 @@ export default function Home({ setCurrentTab }: HomeProps) {
       <section id="faq-section" className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="text-center space-y-2">
           <span className="text-xs font-mono text-[#4F6EF7] uppercase tracking-widest font-semibold block">Clearing Security Prejudices</span>
-          <h2 className="text-2xl md:text-3xl font-sans font-bold text-[#F8F8FF] tracking-tight">AWS Operations Objections Addressed</h2>
+          <h2 className="text-2xl md:text-3xl font-sans font-bold text-[#F8F8FF] tracking-tight">Infrastructure Operations Objections Addressed</h2>
           <p className="text-xs text-[#8888A0]">Clear, modular, direct technical metrics evaluating access compliance policies.</p>
         </div>
 
@@ -501,7 +508,7 @@ export default function Home({ setCurrentTab }: HomeProps) {
             Let's Review Your Architecture
           </div>
           <h2 className="text-3xl md:text-4xl font-sans font-bold text-[#F8F8FF] tracking-tight leading-none">
-            Secure Your Free AWS Cost Audit
+            Secure Your Free Infrastructure Discovery Review
           </h2>
           <p className="text-sm text-[#8888A0] leading-relaxed">
             No long commitments. NDA signed prior to scheduling. Secure a dedicated screen review mapping waste vectors in under 30 minutes.

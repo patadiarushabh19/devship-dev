@@ -47,7 +47,7 @@ export default function Contact() {
         <span className="text-xs font-mono text-[#4F6EF7] uppercase tracking-widest font-semibold block">Continuous Communication</span>
         <h1 className="text-3xl md:text-5xl font-sans font-bold text-[#F8F8FF] tracking-tight">Initiate Operational Audit</h1>
         <p className="text-sm text-[#8888A0] leading-relaxed">
-          Book your AWS cloud overview immediately using our interactive scheduler, or drop general operational specifications to our engineering team.
+          Book your infrastructure overview immediately using our interactive scheduler, or drop general operational specifications to our engineering team.
         </p>
       </section>
 
@@ -128,7 +128,7 @@ export default function Contact() {
                     onChange={handleInputChange}
                     className="w-full bg-[#0A0A0F] border border-[#1E1E2E] rounded p-2.5 text-xs text-[#F8F8FF] outline-none focus:border-[#4F6EF7]"
                   >
-                    <option value="aws">AWS (Amazon Web Services)</option>
+                    <option value="aws">AWS / Azure / GCP (Hyperscalers)</option>
                     <option value="heroku">Heroku</option>
                     <option value="vercel">Vercel / Netlify</option>
                     <option value="gcp">Google Cloud Platform</option>

@@ -21,10 +21,10 @@ const MOCK_LOGS_OPTIMIZED = [
   "[info] Init terraform backend connection... [SUCCESS]",
   "[info] Applied VPC S3 Gateways. Redirected internal analytical logs via private route. NAT costs optimized.",
   "[info] Migrating EBS volumes from GP2 to GP3... Status: Complete [100% Volume Group]",
-  "[info] Downsized underutilized EC2 instances into a serverless AWS ECS Fargate Task Definition.",
+  "[info] Downsized underutilized server nodes into high-density container task partitions.",
   "[info] Enforced strict Principal IAM checks. Rotated non-active infrastructure API keys.",
   "[info] Audited S3 archives. Mounted lifecycle policies. Compressed and migrated old logs to S3 Glacier Deep Archive.",
-  "[success] Deployment Pipeline Optimized | Drift Reduced to 0 | AWS Infrastructure Continuous Optimization Applied."
+  "[success] Deployment Pipeline Optimized | Drift Reduced to 0 | Multi-Environment Performance Benchmarked."
 ];
 
 export default function DashboardMockup() {
@@ -75,7 +75,7 @@ export default function DashboardMockup() {
             <span className="w-3 h-3 bg-yellow-500/80 rounded-full inline-block"></span>
             <span className="w-3 h-3 bg-emerald-500/80 rounded-full inline-block"></span>
           </div>
-          <span className="ml-3 font-mono text-xs text-[#8888A0] tracking-tight">devship-infra-monitor-v2.0</span>
+          <span className="ml-3 font-mono text-xs text-[#8888A0] tracking-tight">atlas-infra-intelligence-v2.0</span>
         </div>
 
         {/* State Toggle for Legacy vs Optimized */}
@@ -89,7 +89,7 @@ export default function DashboardMockup() {
                 : 'text-[#8888A0] hover:text-white'
             }`}
           >
-            Legacy AWS Setup
+            Legacy Server Architecture
           </button>
           <button
             id="btn-optimized-infra"
@@ -100,7 +100,7 @@ export default function DashboardMockup() {
                 : 'text-[#8888A0] hover:text-white'
             }`}
           >
-            DevShip Optimized
+            Atlas Modernized
           </button>
         </div>
       </div>
@@ -117,7 +117,7 @@ export default function DashboardMockup() {
           </div>
 
           <div className="bg-[#0A0A0F] border border-[#1E1E2E] rounded-lg p-4 space-y-2">
-            <span className="text-xs font-mono text-[#8888A0]">AWS Current Monthly Spend</span>
+            <span className="text-xs font-mono text-[#8888A0]">Current Monthly Running Costs</span>
             <div className="flex items-baseline space-x-2">
               <span className={`text-2xl font-mono tracking-tight font-bold transition-all ${isOptimized ? 'text-emerald-400' : 'text-rose-500'}`}>
                 ${isOptimized ? '1,895' : '5,420'}
@@ -210,7 +210,7 @@ export default function DashboardMockup() {
               {/* Subnet Cluster box Wrapper */}
               <div className={`p-3 relative z-10 w-full border ${isOptimized ? 'border-indigo-500/20 bg-indigo-950/5' : 'border-red-500/20 bg-red-950/5'} rounded-lg transition-all`}>
                 <div className="absolute top-1 left-2">
-                  <span className="text-[8px] font-mono text-[#8888A0]">Isolated Private DevShip VPC</span>
+                  <span className="text-[8px] font-mono text-[#8888A0]">Isolated Private Enterprise Network</span>
                 </div>
                 
                 <div className="flex justify-around mt-4">
@@ -218,7 +218,7 @@ export default function DashboardMockup() {
                   <div className={`w-[45%] p-2 rounded-md border flex flex-col items-center justify-center ${isOptimized ? 'border-indigo-500/30 bg-[#111118]' : 'border-amber-500/30 bg-[#111118]'}`}>
                     <Server className={`w-4 h-4 mb-1 ${isOptimized ? 'text-indigo-400' : 'text-amber-400'}`} />
                     <span className="text-[9px] font-mono text-[#F8F8FF] whitespace-nowrap">
-                      {isOptimized ? 'ECS Fargate Tasks' : 'EC2 t3.large Host'}
+                      {isOptimized ? 'Container Tasks' : 'Legacy Virtual Host'}
                     </span>
                     <span className="text-[7px] font-mono text-[#8888A0] mt-0.5">
                       {isOptimized ? 'Scale: 2-10 serverless' : 'Uptime Leak (Static)'}

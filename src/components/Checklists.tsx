@@ -8,40 +8,40 @@ import { ShieldCheck, ShieldAlert, BadgePercent, Lock, HardHat, CheckCircle2, Ch
 import { motion, AnimatePresence } from 'motion/react';
 
 const COST_ITEMS = [
-  { id: 'idle-rds', title: 'Idle RDS Database Replication Active', description: 'Multi-AZ replication turned on in Development, Staging, or Preview environments.', wasteCost: 350 },
-  { id: 'gp2-ebs', title: 'EBS Storage Volumes Still Bound to GP2', description: 'Older GP2 volumes cost 20% more than the modernized GP3 volume group offering higher baseline IOPS.', wasteCost: 180 },
-  { id: 'nat-leak', title: 'Routing Private App S3 Logs via Public NAT Gateway', description: 'Incurring $0.045 per GB egress data processing instead of routing internally with a free private S3 VPC Endpoint.', wasteCost: 520 },
-  { id: 'unattached-ebs', title: 'Orphaned EBS Disk Storage Volumes', description: 'Active drive storage remaining allocated and billed after instances or servers have been terminated.', wasteCost: 140 },
-  { id: 'no-instance-stop', title: 'Staging Servers Left Running 24/7 Over Weekends', description: 'Keeping preview, dev, or sandbox environments provisioned outside standard product development hours.', wasteCost: 450 },
-  { id: 'overprovision-containers', title: 'Oversized Container Task Memory Profiles', description: 'Hardcoded 2.0x peak virtual allocation on ECS tasks despite average telemetry CPU being under 5%.', wasteCost: 320 }
+  { id: 'idle-hosts', title: 'Idle Hypervisor or Virtual Machine Clusters', description: 'Over-allocated CPU and RAM running constant idle states in sandbox or development partitions.', wasteCost: 380 },
+  { id: 'unattached-storage', title: 'Orphaned Storage Volumes & Disk Pools', description: 'Static storage partitions remaining active and billed after core virtual servers have been deleted.', wasteCost: 160 },
+  { id: 'egress-leaks', title: 'Unoptimized Internal Network Communication Routing', description: 'Routing internal database queries or logs across public transit subnets instead of secure local switch tunnels.', wasteCost: 480 },
+  { id: 'overprovision-compute', title: 'Over-Allocated Hardware Profiles (No Auto-Scaling)', description: 'Sizing dedicated metal nodes for peak load overhead rather than grouping modern serverless tasks.', wasteCost: 550 },
+  { id: 'no-off-sandbox', title: 'Staging Environments Running 24/7 on Weekends', description: 'Keeping isolated staging and demo virtual clusters fully active outside standard research guidelines.', wasteCost: 420 },
+  { id: 'expensive-storage-tier', title: 'Uncompressed Cold Logs in Fast Storage Layers', description: 'Storing legacy application database and firewall logs inside premium NVMe arrays instead of cold storage.', wasteCost: 290 }
 ];
 
 const SECURITY_QUESTIONS = [
   {
-    id: 'iam-role',
-    text: 'How do your CI/CD pipelines access AWS accounts?',
+    id: 'access-control',
+    text: 'How are administrative access credentials managed for servers?',
     options: [
-      { text: 'Permanent Admin IAM user access keys (AccessKeyID/SecretAccessKey) stored in GitHub secrets.', score: 10, priority: 'CRITICAL', advisory: 'Replace static keys immediately. Configure OIDC cross-account trust roles so GitHub assumes temporary 1-hour STS credentials via AWS STS.' },
-      { text: 'Access keys with restricted custom IAM policies mapped specifically to deployment services.', score: 50, priority: 'HIGH', advisory: 'Static credentials can leak. Prefer OIDC AWS IAM Identity Providers.' },
-      { text: 'OIDC integration mapping temporary sessions without hardcoded root access key configurations.', score: 100, priority: 'HEALTHY', advisory: 'Excellent. Standard best-practice.' }
+      { text: 'Root or high-privilege credentials shared across developers or stored in plain-text config files.', score: 10, priority: 'CRITICAL', advisory: 'Enforce individualized logins. Block root login entirely and map secure single sign-on tunnel protocols with continuous token rotations.' },
+      { text: 'Permanent individual SSH keys mapped and updated occasionally through deployment runners.', score: 50, priority: 'HIGH', advisory: 'Permanent static keys are prone to leakage. We recommend transitioning to temporary session-based authorization keys.' },
+      { text: 'Federated identity providers issuing short-lived session access keys with automated auditing.', score: 100, priority: 'HEALTHY', advisory: 'Excellent enterprise-grade practice.' }
     ]
   },
   {
-    id: 'ssh-ingress',
-    text: 'What ingress paths are open to your databases/servers?',
+    id: 'firewall-ingress',
+    text: 'What firewall rules are open to your backend databases?',
     options: [
-      { text: 'Port 22 (SSH) or Port 5432/3306 (Postgres/MySQL) is open to the public internet (0.0.0.0/0).', score: 5, priority: 'CRITICAL', advisory: 'Exposing relational database ports publicly invites continuous brute-force attacks. Shield databases inside isolated private subnets, allowing access only via AWS Systems Manager (SSM) Session Manager or specialized bastion hosts.' },
-      { text: 'Whitelisted developer IP addresses mapped directly in Security Group config files.', score: 60, priority: 'MEDIUM', advisory: 'Prone to credential rotation issues. We recommend shifting to AWS client VPN or SSM Tunneling.' },
-      { text: 'No direct public ingress. Private subnets isolated. VPN or SSM Session Manager mandatory.', score: 100, priority: 'HEALTHY', advisory: 'Perfect. Your network boundary is isolated successfully.' }
+      { text: 'Internal database ports exposed directly to the public internet (0.0.0.0/0).', score: 5, priority: 'CRITICAL', advisory: 'Exposing relational database ports publicly invites continuous automated brute-force attempts. Shield SQL services inside private sub-networks reachable only through secure VPN tunnels or single-port bastion configurations.' },
+      { text: 'Whitelisted developer or branch IP addresses opened explicitly in state configurations.', score: 60, priority: 'MEDIUM', advisory: 'Prone to credential rot when developer IPs rotate. We advocate routing access through encrypted client tunnels.' },
+      { text: 'Completely private network topology isolated from direct public web ingress paths.', score: 100, priority: 'HEALTHY', advisory: 'Perfect. Your network database bounds are securely isolated.' }
     ]
   },
   {
-    id: 'cloudtrail-audit',
-    text: 'Is AWS CloudTrail logs actively forwarded and protected?',
+    id: 'audit-log',
+    text: 'Are operational and system audit trails centralized and monitored?',
     options: [
-      { text: 'Not sure / CloudTrail is disabled or only tracking local events on a 90-day retention loop.', score: 15, priority: 'HIGH', advisory: 'If an account gets compromised, you will have no audit tail. Enable custom CloudTrail routing to a multi-region encrypted S3 bucket protected with Object Lock policy.' },
-      { text: 'Enabled but not actively monitored or alerted for critical root logins or anomaly signals.', score: 60, priority: 'MEDIUM', advisory: 'Establish Simple Notification Service (SNS) alerting triggers mapping root console authorizations.' },
-      { text: 'Enabled, encrypted, forwarded to isolated account log-archives with automated security telemetry alerts.', score: 100, priority: 'HEALTHY', advisory: 'Secure audit pipeline active.' }
+      { text: 'Audit trails are disabled or only saved locally on individual hosts (prone to loss on failure).', score: 15, priority: 'HIGH', advisory: 'Centralize audit logs immediately. If an asset is ever compromised, local logs can be altered. Encrypt and replicate trace trails into secure write-once-read-many (WORM) pools.' },
+      { text: 'Logs collected but lack real-time alarm alerts or continuous anomaly telemetry scans.', score: 60, priority: 'MEDIUM', advisory: 'Build active notification triggers alerting engineers of unauthorized terminal logins.' },
+      { text: 'Centralized, tamper-proof audit trails actively monitored via telemetry alerting systems.', score: 100, priority: 'HEALTHY', advisory: 'Secure audit log management is fully operational.' }
     ]
   }
 ];
@@ -102,7 +102,7 @@ export default function Checklists() {
               : 'text-[#8888A0] hover:text-[#F8F8FF]'
           }`}
         >
-          AWS Cost Optimization Checklist
+          Infrastructure Cost Optimization Checklist
         </button>
         <button
           id="btn-sec-tab"
@@ -113,7 +113,7 @@ export default function Checklists() {
               : 'text-[#8888A0] hover:text-[#F8F8FF]'
           }`}
         >
-          AWS Security Scorecard
+          Infrastructure Security Scorecard
         </button>
         <button
           id="btn-guide-tab"
@@ -241,7 +241,7 @@ export default function Checklists() {
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#1E1E2E] pb-4">
                 <div>
-                  <h4 className="text-base font-sans font-medium text-[#F8F8FF]">AWS Security Assessment Tool</h4>
+                  <h4 className="text-base font-sans font-medium text-[#F8F8FF]">Infrastructure Security Assessment Tool</h4>
                   <p className="text-xs text-[#8888A0] mt-0.5">Answer the questions below to evaluate your current benchmark configuration safety.</p>
                 </div>
                 <div className="bg-[#0A0A0F] border border-[#1E1E2E] p-3 rounded-md text-center min-w-[130px]">
@@ -302,7 +302,7 @@ export default function Checklists() {
                   <span className="text-[10px] font-mono text-emerald-400 uppercase block font-semibold">CIS Framework Compliant Report</span>
                   <h5 className="text-sm font-sans font-medium text-[#F8F8FF]">Download your customized security recommendations PDF</h5>
                   <p className="text-xs text-[#8888A0] leading-normal">
-                    Enter your email to receive your score breakdown, complete remediation code snippets, and a free AWS security group checklist for developers.
+                    Enter your email to receive your score breakdown, complete remediation code snippets, and a free infrastructure security checklist for developers.
                   </p>
                 </div>
 
@@ -360,7 +360,7 @@ export default function Checklists() {
               <div className="space-y-2">
                 <h4 className="text-lg font-sans font-semibold text-[#F8F8FF] tracking-tight">The Startup Infrastructure Audit Guide (PDF)</h4>
                 <p className="text-sm text-[#8888A0] max-w-lg leading-relaxed">
-                  Our comprehensive, battle-tested 48-page operations guide used by AWS security architects. Learn how to configure robust IAM boundaries, map scalable VPC layouts, structure clean Terraform variables, and downsize databases securely.
+                  Our comprehensive, battle-tested 48-page operations guide used by lead security architects. Learn how to configure robust permission boundaries, map scalable network layouts, structure clean Terraform variables, and optimize databases securely.
                 </p>
               </div>
 

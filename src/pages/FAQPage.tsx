@@ -21,22 +21,22 @@ export default function FAQPage({ setCurrentTab }: FAQProps) {
 
   const categories = [
     {
-      name: 'Procurement & Operations',
+      name: 'Engagement & Operations',
       items: [
         {
           id: 'why-not-hire',
-          question: 'Why should we partner with DevShip instead of hiring internally?',
-          answer: 'Hiring a senior cloud engineer burns $180K+ in salary, months of recruiter attention, and equity dilution. More importantly, once your core pipelines and VPC configurations are code-declared, early-stage maintenance needs under 10 hours of active monthly review. With DevShip, you pay for elite outcomes as-a-service without the financial deadweight.'
+          question: 'Why should we partner with Atlas instead of hiring internally?',
+          answer: 'Hiring a senior cloud or systems engineer burns $180K+ in salary, months of recruiter attention, and equity dilution. More importantly, once your core pipelines and server configurations are mapped, early-stage systems maintenance needs very little active weekly overhead. With Atlas, you secure senior solutions architects onto your design objectives instantly without the financial payroll bloat.'
         },
         {
           id: 'outgrow-boundaries',
-          question: 'What occurs if we outgrow our current plan boundaries?',
-          answer: 'That is exactly the goal of high-growth tech startups. If your traffic spikes or engineering coordinates multi-region AWS configurations, we transition your stack from our Starter or Growth plans to our Scale Plan using workflows designed to minimize service disruptions or database downtime.'
+          question: 'How is the discovery engagement scoped?',
+          answer: 'Our discovery engagements align directly with your overall footprint of physical servers, VM hypervisors, database endpoints, or active container subnets. We establish a clear fixed-scope discovery proposal suited to your unique bare metal or multi-cloud topology.'
         },
         {
           id: 'cancel-anytime',
-          question: 'What happens if we decide to cancel our monthly partnership?',
-          answer: 'All of our ongoing active agreements are on a month-to-month calendar basis. If you cancel, all of our custom Terraform modules, actions YAMLs, build dockerfiles, and secrets configurations remain checked into your private Git repositories. You retain complete operational ownership of the native setup.'
+          question: 'What happens to the discovery output after the engagement?',
+          answer: 'Complete ownership. All custom Terraform templates, automated pipeline scripts, system configuration files, and deep topology maps are validated and handed over directly inside your private Git systems or dashboards with zero provider lock-ins.'
         }
       ]
     },
@@ -45,18 +45,18 @@ export default function FAQPage({ setCurrentTab }: FAQProps) {
       items: [
         {
           id: 'aws-account-ownership',
-          question: 'Do we keep 100% root ownership of our AWS accounts?',
-          answer: 'Absolutely. We do not host resources inside proprietary DevShip cloud accounts. All databases, servers, and networks of your setup reside inside your own AWS billing framework. You provide access permissions tightly controlled via secure IAM cross-account trust roles that can be deleted with a single click in your AWS console.'
+          question: 'Do we keep 100% root ownership of our credentials and assets?',
+          answer: 'Absolutely. We do not host resources inside proprietary Atlas accounts. All databases, bare metal servers, and virtual nodes reside inside your own account or data center framework. Access is limited to Least Privilege and can be retired cleanly at any point.'
         },
         {
           id: 'nda-disclosures',
-          question: 'Can our team sign a mutual NDA prior to discussing cloud secrets?',
-          answer: 'Yes, this is standard engineering protocol. All of our structural audits run under complete security coverage. Click our scheduler to set up a time, and a mutual pre-signed Non-Disclosure Agreement will automatically forward to your developer inbox.'
+          question: 'Can our team sign a mutual NDA prior to discussing systems?',
+          answer: 'Yes, this is standard enterprise protocol. All of our structural reviews run under complete security coverage. Click our scheduler to choose a time, and a mutual pre-signed Non-Disclosure Agreement will be sent to your inbox immediately.'
         },
         {
           id: 'compliance-readiness',
-          question: 'Is the infrastructure designed by DevShip ready for HIPAA or SOC2 reviews?',
-          answer: 'Yes. Every setup we construct aligns with mature security standard frameworks, specifically including CIS Benchmarks, SOC2 Type II controls, and HIPAA compliance specifications. We mount AWS CloudTrail audits, S3 encryption boundaries, and strict security groups with full documentation.'
+          question: 'Are the assessments and blueprints ready for HIPAA or SOC2 reviews?',
+          answer: 'Yes. Every assessment we conduct aligns with mature standard frameworks, specifically including CIS Benchmarks, SOC2 Type II compliance regulations, and HIPAA security guidelines. We verify logging trails, subnet segregation boundaries, and authentication posture.'
         }
       ]
     },
@@ -65,18 +65,18 @@ export default function FAQPage({ setCurrentTab }: FAQProps) {
       items: [
         {
           id: 'already-existing-aws',
-          question: 'What if we already run an active, complex AWS cloud setup?',
-          answer: 'We do not run destructive configurations. We use AWS Read-Only audit permissions to verify configuration drifts, pinpoint billing waste leaks, and trace security anomalies. We then coordinate upgrades in parallel staging branches with workflows designed to minimize disruptions to live operations.'
+          question: 'What if we already operate complex hybrid or hardware structures?',
+          answer: 'We do not run destructive configurations. We use standard Read-Only discovery protocols to map resource drifts, locate compliance leaks, and trace security vulnerabilities with zero impact on live services.'
         },
         {
           id: 'k8s-kubernetes',
-          question: 'Do you configure and support complex Kubernetes EKS environments?',
-          answer: 'Yes. Our senior solutions architects are CKAs. However, for most early-stage and seed startups, we find configuring EKS container overhead represents high capital inefficiency. We often design streamlined serverless ECS Fargate patterns, reducing operations complexity by 90% while achieving identical scaling.'
+          question: 'Do you support complex Kubernetes clustering and modern hypervisors?',
+          answer: 'Yes. Our advisors support physical hypervisors like VMware or Proxmox, alongside Docker, Kubernetes clusters, legacy VPS systems, and bare metal hosts. We match resources perfectly to your operational constraints.'
         },
         {
           id: 'terraform-iac',
-          question: 'Do you support cloud modules written in CloudFormation or Pulumi?',
-          answer: 'While AWS natively operates CloudFormation, we write, manage, and deliver 100% of our infrastructure using Terraform. Terraform is the industry-standard multi-cloud declarative engine, ensuring you avoid AWS proprietary lock-ins.'
+          question: 'What tools do you support in mapping declarative assets?',
+          answer: 'We write, manage, and audit infrastructure declarations using standard Terraform. Terraform is the industry-standard multi-cloud declarative engine, ensuring you avoid proprietary vendor lock-ins.'
         }
       ]
     }
@@ -90,7 +90,7 @@ export default function FAQPage({ setCurrentTab }: FAQProps) {
         <span className="text-xs font-mono text-[#4F6EF7] uppercase tracking-widest font-semibold block">Clearing Obstacles</span>
         <h1 className="text-3xl md:text-5xl font-sans font-bold text-[#F8F8FF] tracking-tight">Technical Operations FAQ</h1>
         <p className="text-sm text-[#8888A0] leading-relaxed">
-          Comprehensive, direct technical responses assessing our pricing models, cloud access boundaries, custom Terraform delivery, and continuous operations support.
+          Comprehensive, direct technical responses assessing our engagement models, cloud access boundaries, custom Terraform delivery, and continuous operations support.
         </p>
       </section>
 

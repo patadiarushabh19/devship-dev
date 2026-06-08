@@ -116,7 +116,7 @@ export default function Scheduler() {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#1E1E2E] pb-5">
               <div>
                 <span className="text-xs font-mono text-[#4F6EF7] uppercase tracking-wider font-semibold">Step 1 of 2</span>
-                <h3 className="text-xl font-sans font-medium text-[#F8F8FF] tracking-tight mt-1">Book Your Free AWS Infrastructure Audit</h3>
+                <h3 className="text-xl font-sans font-medium text-[#F8F8FF] tracking-tight mt-1">Book Your Infrastructure Discovery Review</h3>
                 <p className="text-sm text-[#8888A0] mt-1">Select a business day and secure 30-minute workspace review.</p>
               </div>
 
@@ -240,7 +240,7 @@ export default function Scheduler() {
             <div className="flex items-center justify-between border-b border-[#1E1E2E] pb-5 mb-5">
               <div>
                 <span className="text-xs font-mono text-[#4F6EF7] uppercase tracking-wider font-semibold">Step 2 of 2</span>
-                <h3 className="text-xl font-sans font-medium text-[#F8F8FF] tracking-tight mt-1">Who Are We Auditing AWS For?</h3>
+                <h3 className="text-xl font-sans font-medium text-[#F8F8FF] tracking-tight mt-1">Who Are We Reviewing Infrastructure For?</h3>
                 <p className="text-sm text-[#8888A0]">Provide technical metrics so we can analyze before our slot.</p>
               </div>
               <button 
@@ -306,8 +306,8 @@ export default function Scheduler() {
                     onChange={handleInputChange}
                     className="w-full bg-[#0A0A0F] border border-[#1E1E2E] rounded p-2.5 text-sm text-[#F8F8FF] focus:border-[#4F6EF7] outline-none"
                   >
-                    <option value="Cost Optimization">Fix AWS Costs (40-70% reduction)</option>
-                    <option value="Cloud Migration">Migrate from Heroku / Vercel to AWS</option>
+                    <option value="Cost Optimization">Optimize Asset Allocations & Footprint Costs</option>
+                    <option value="Cloud Migration">Migrate Workloads (Bare Metal, Cloud, Containerization)</option>
                     <option value="Greenfield Setup">Secure Architecture Setup (5 Days)</option>
                     <option value="CI/CD Infrastructure">Optimize CI/CD Pipelines & SLOs</option>
                   </select>
@@ -322,7 +322,7 @@ export default function Scheduler() {
                     onChange={handleInputChange}
                     className="w-full bg-[#0A0A0F] border border-[#1E1E2E] rounded p-2.5 text-sm text-[#F8F8FF] focus:border-[#4F6EF7] outline-none"
                   >
-                    <option value="aws">AWS (Amazon Web Services)</option>
+                    <option value="aws">AWS / Azure / GCP (Hyperscalers)</option>
                     <option value="heroku">Heroku</option>
                     <option value="vercel">Vercel / Netlify</option>
                     <option value="gcp">Google Cloud Platform</option>
@@ -331,7 +331,7 @@ export default function Scheduler() {
                 </div>
 
                 <div className="space-y-1">
-                  <label htmlFor="spend-select" className="text-xs font-mono text-[#8888A0] uppercase block">Estimated AWS Monthly Spend</label>
+                  <label htmlFor="spend-select" className="text-xs font-mono text-[#8888A0] uppercase block">Estimated Monthly Compute / Server Spend</label>
                   <select
                     id="spend-select"
                     name="monthlySpend"
@@ -363,7 +363,7 @@ export default function Scheduler() {
 
               <div className="flex md:items-center space-x-2 text-xs text-[#8888A0] bg-[#0A0A0F] p-3 rounded border border-[#1E1E2E]/80 mt-4">
                 <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>DevShip respects privacy. We sign full-security enterprise NDAs on your first request and never share account telemetry.</span>
+                <span>Atlas respects privacy. We sign full-security enterprise NDAs on your first request and never share account telemetry.</span>
               </div>
 
               <div className="flex justify-end pt-5 border-t border-[#1E1E2E]">
@@ -372,7 +372,7 @@ export default function Scheduler() {
                   type="submit"
                   className="bg-emerald-500 hover:bg-emerald-600 font-medium text-white text-xs px-6 py-3 rounded-lg flex items-center space-x-2 transition-all cursor-pointer"
                 >
-                  <span className="font-semibold">Confirm AWS Audit Slot</span>
+                  <span className="font-semibold">Confirm Discovery Review Slot</span>
                   <Check className="w-4 h-4" />
                 </button>
               </div>
@@ -393,7 +393,7 @@ export default function Scheduler() {
 
             <div className="max-w-md mx-auto space-y-2">
               <span className="text-xs font-mono text-emerald-400 uppercase tracking-widest font-semibold block">Audit Call Confirmed</span>
-              <h3 className="text-2xl font-sans font-medium text-[#F8F8FF] tracking-tight">Your AWS Security & Cost Audit Is Scheduled</h3>
+              <h3 className="text-2xl font-sans font-medium text-[#F8F8FF] tracking-tight">Your Infrastructure Discovery Review Is Scheduled</h3>
               <p className="text-sm text-[#8888A0]">
                 We are excited to review your cloud stack. Meeting details below have been sent to <strong className="text-white">{formData.email}</strong>.
               </p>
@@ -415,7 +415,7 @@ export default function Scheduler() {
                   </div>
                   <div className="flex items-center space-x-2 text-xs text-[#F8F8FF]">
                     <Video className="w-4 h-4 text-[#4F6EF7]" />
-                    <span className="font-mono text-emerald-400 underline decoration-emerald-500/30">meet.google.com/devship-audit-{Math.floor(Math.random() * 900) + 100}</span>
+                    <span className="font-mono text-emerald-400 underline decoration-emerald-500/30">meet.google.com/atlas-discovery-{Math.floor(Math.random() * 900) + 100}</span>
                   </div>
                 </div>
               </div>
@@ -425,7 +425,7 @@ export default function Scheduler() {
                 <div className="space-y-2">
                   <div className="flex items-start space-x-2 text-xs text-[#8888A0]">
                     <FileText className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                    <span>Locate your top AWS bill categories in Cost Explorer.</span>
+                    <span>Identify key server densities and active cluster setups.</span>
                   </div>
                   <div className="flex items-start space-x-2 text-xs text-[#8888A0]">
                     <FileText className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />

@@ -4,7 +4,6 @@
  */
 
 import React from 'react';
-import { Shield, Eye, HelpCircle } from 'lucide-react';
 
 export function PrivacyPolicy() {
   return (
@@ -19,28 +18,28 @@ export function PrivacyPolicy() {
         <section className="space-y-2">
           <h2 className="text-sm font-sans font-semibold text-[#F8F8FF] uppercase tracking-wide">1. Information We Access</h2>
           <p>
-            We do not cache, copy, or sell your private database logs, client telemetry, IP parameters, or configuration secrets. When you map our access keys via AWS IAM Cross-Account Roles, we only access target metadata descriptors (such as count metrics, region specifications, and security group bounds) to optimize costs and security.
+            We do not cache, copy, or sell your private database logs, client telemetry, IP parameters, or configuration secrets. When we map access permissions to conduct our assessments, we only query configuration metadata descriptors (such as node counts, virtualization layouts, and security group bounds) to pinpoint optimization opportunities.
           </p>
         </section>
 
         <section className="space-y-2">
           <h2 className="text-sm font-sans font-semibold text-[#F8F8FF] uppercase tracking-wide">2. Strict Credential Sovereignty</h2>
           <p>
-            You retain absolute billing and control ownership of your AWS accounts. We access configurations solely using Least Privilege Role boundaries (limiting direct terminal root access completely). At no point does DevShip staff ask for password metrics or credit cards outside designated banking processors.
+            You retain absolute billing and control ownership of your infrastructure and environments. We query metrics solely using Least Privilege access boundaries (limiting root shell access completely). At no point does Atlas staff request credentials or payment details outside standard designated processing systems.
           </p>
         </section>
 
         <section className="space-y-2">
           <h2 className="text-sm font-sans font-semibold text-[#F8F8FF] uppercase tracking-wide">3. Corporate Mutual NDAs</h2>
           <p>
-            Prior to any screening or read-only credential exchange, DevShip and our clients negotiate a comprehensive, binding mutual Non-Disclosure Agreement (NDA). All disclosures regarding your software, development frameworks, and architectures are covered strictly under governing trade laws.
+            Prior to any discovery review or read-only credentials exchange, Atlas and our clients negotiate a comprehensive, binding mutual Non-Disclosure Agreement (NDA). All disclosures regarding your software, development frameworks, and architectures are covered strictly under governing trade laws.
           </p>
         </section>
 
         <section className="space-y-2">
-          <h2 className="text-sm font-sans font-semibold text-[#F8F8FF] uppercase tracking-wide">4. Third-Party Integrations</h2>
+          <h2 className="text-sm font-sans font-semibold text-[#F8F8FF] uppercase tracking-wide">4. Secure Integrations</h2>
           <p>
-            We use secure, enterprise-grade processors for our workflows, including PagerDuty for continuous telemetry paging, Zendesk/Slack for ticket routing, and Stripe for subscription billing.
+            We utilize secure, enterprise-grade tools for communication, customer ticket routing, and business operations. No customer configuration details are ever exposed.
           </p>
         </section>
       </div>
@@ -59,30 +58,30 @@ export function TermsOfService() {
 
       <div className="space-y-6">
         <section className="space-y-2">
-          <h2 className="text-sm font-sans font-semibold text-[#F8F8FF] uppercase tracking-wide">1. DevOps-As-A-Service Terms</h2>
+          <h2 className="text-sm font-sans font-semibold text-[#F8F8FF] uppercase tracking-wide">1. Discovery & Assessment Terms</h2>
           <p>
-            DevShip deliverables represent a structured ongoing operations partnership. We do not guarantee absolute absence of database outages caused by AWS internal service failures, core container disruptions, or developer application coding errors. We commit to professional support target response windows within your subscribed tier.
+            Atlas deliverables represent a structured discovery and infrastructure optimization assessment engagement. We do not guarantee absolute absence of database outages caused by external cloud providers, physical hardware failures, or developer application coding errors.
           </p>
         </section>
 
         <section className="space-y-2">
-          <h2 className="text-sm font-sans font-semibold text-[#F8F8FF] uppercase tracking-wide">2. Predictable Billing & Payments</h2>
+          <h2 className="text-sm font-sans font-semibold text-[#F8F8FF] uppercase tracking-wide">2. Transparent Scoping & Terms</h2>
           <p>
-            Subscriptions are billed securely in advance on a recurring monthly cycle. All invoices must be cleared within 5 business days of the billing start. In instances of non-clearance, we hold the absolute right to freeze continuous operations page telemetry until payments are satisfied.
+            All engagements are scoped accurately based on server counts and virtualization complexity. All upfront discovery projects are documented with clear timelines before execution.
           </p>
         </section>
 
         <section className="space-y-2">
-          <h2 className="text-sm font-sans font-semibold text-[#F8F8FF] uppercase tracking-wide">3. Code Ownership Transfer</h2>
+          <h2 className="text-sm font-sans font-semibold text-[#F8F8FF] uppercase tracking-wide">3. Blueprint & Map Transfer</h2>
           <p>
-            Any custom configuration files, automation scripts, Terraform modules, build structures, and Actions templates constructed specifically for your accounts during active subscriptions are fully owned by your company. Pushing code updates directly to your private Git repositories transfers ownership instantly.
+            Any custom configuration files, automation blueprints, Terraform models, and topology maps constructed specifically for your accounts during active engagements are fully owned by your company. Transfer occurs immediately upon completion of handover.
           </p>
         </section>
 
         <section className="space-y-2">
           <h2 className="text-sm font-sans font-semibold text-[#F8F8FF] uppercase tracking-wide">4. Limitation of Liability</h2>
           <p>
-            DevShip will not be held liable for any indirect, consequential, or accidental monetary damages (including sudden AWS over-billing spikes resulting from developer code loops, third-party software breaches, or data lost during migration transfers) exceeding the total amount paid by you to DevShip in the three months prior.
+            Atlas will not be held liable for any indirect, consequential, or accidental monetary damages (including sudden operational billing spikes, third-party software breaches, or data lost during migration transfers) exceeding the total amount paid by you to Atlas in the three months prior.
           </p>
         </section>
       </div>

@@ -24,52 +24,52 @@ export default function InteractiveWorkflow() {
   const stages: Stage[] = [
     {
       id: 1,
-      title: 'AWS Infrastructure Audit',
-      subtitle: 'Read-only analysis isolated by secure role configurations',
-      description: 'We connect safely using Cross-Account ReadOnly IAM roles to inspect cluster capacity, NAT gateway configurations, RDS storage settings, and network topologies.',
+      title: 'Infrastructure Discovery & Audit',
+      subtitle: 'Read-only analysis isolated by secure session limits',
+      description: 'We connect safely using read-only API tokens or secure audit tools to inspect server capacity, virtualization structures, container configurations, storage rules, and network topologies.',
       technicalLabel: 'STAGE_01_RESOURCES_AUDIT',
       checklist: [
-        'Read-Only cross-account role integration',
-        'Analyze EC2 & EBS volume utilization',
-        'Identify security group ingress & IAM privileges',
+        'Secure read-only access credential mapping',
+        'Analyze host core & RAM utilization ranges',
+        'Identify firewall settings & access boundaries',
         'Draft complete architectural footprint map'
       ],
       metrics: [
-        { label: 'System Scanners Configured', value: '4 Scanners' },
-        { label: 'Cost Inefficiencies Located', value: 'Analyzed Monthly' }
+        { label: 'System Scanners Configured', value: 'Multi-Arch Scanners' },
+        { label: 'Cost Inefficiencies Located', value: 'Analyzed Continuously' }
       ]
     },
     {
       id: 2,
       title: 'Architecture Blueprints',
       subtitle: 'Declarative multi-environment topologies mapped for scale',
-      description: 'We layout highly isolated AWS Virtual Private Cloud configurations across multi-tier subnets, establishing secure bastion configurations, container parameters, and structure-mapped IAM boundaries.',
+      description: 'We layout highly isolated virtual networks, custom private segments, private subnets, secure bastion hosts, compute limits, and structure-mapped role boundaries.',
       technicalLabel: 'STAGE_02_TOPOLOGY_BLUEPRINTS',
       checklist: [
-        'Secure multi-AZ VPC subnet segregation',
-        'Configure least-privileged IAM roles',
+        'Secure multi-segment private networks',
+        'Configure least-privileged service roles',
         'Establish isolated secure database staging pools',
-        'Align security groups with SOC2 & HIPAA controls'
+        'Align network security with industry benchmarks'
       ],
       metrics: [
         { label: 'Environment Segments', value: 'Production / Staging' },
-        { label: 'Regulatory Frameworks', value: 'SOC2 & HIPAA Aligned' }
+        { label: 'Regulatory Frameworks', value: 'SOC2 & ISO 27001 Aligned' }
       ]
     },
     {
       id: 3,
       title: 'Infrastructure as Code (IaC)',
       subtitle: 'Reproducible declarative definitions via Terraform',
-      description: 'Every resource is formatted cleanly into version-controlled Terraform modules. It eliminates manual AWS Console clicking and reduces configuration drift over time.',
+      description: 'Every resource is formatted cleanly into version-controlled, modular files. This eliminates manual mouse-clicking in admin panels and reduces environment drift over time.',
       technicalLabel: 'STAGE_03_DECLARATIVE_TERRAFORM',
       checklist: [
-        'Modular atomic Terraform layouts',
-        'Encrypted remote state locked in AWS S3',
+        'Modular atomic infrastructure code templates',
+        'Encrypted remote state locked in secure directories',
         'Automated code dry-run validation',
         'PR-driven infrastructure deployments'
       ],
       metrics: [
-        { label: 'Terraform Modules mapped', value: '18 Modules' },
+        { label: 'Asset Modules mapped', value: '18 Modules' },
         { label: 'Configuration Tracking', value: '100% Declarative' }
       ]
     },
@@ -77,7 +77,7 @@ export default function InteractiveWorkflow() {
       id: 4,
       title: 'CI/CD Deployment Pipelines',
       subtitle: 'GitOps workflows designed to minimize deployment disruption',
-      description: 'We transition tasks into automated GitHub Actions pipelines. Code is packaged, linted, tested, and shipped automatically into container pools with zero downtime patterns.',
+      description: 'We transition deployment routines into professional pipelines. Code is packaged, linted, tested, and shipped automatically into container pools using zero-downtime rolling patterns.',
       technicalLabel: 'STAGE_04_DEPLOYMENT_GITOPS',
       checklist: [
         'Continuous integration bundle packaging',
@@ -93,12 +93,12 @@ export default function InteractiveWorkflow() {
     {
       id: 5,
       title: 'Monitoring & Scaling Optimization',
-      subtitle: 'Continuous telemetry, log aggregations, and alerting protocols',
-      description: 'We configure structured alerts targeting application latency, memory trends, database queues, and request spikes, keeping your team updated on resource thresholds.',
+      subtitle: 'Continuous health alerts, centralized logs, and optimization guidelines',
+      description: 'We configure structured telemetry targeting resource latency, memory patterns, database queues, and traffic spikes, keeping your team updated on resource thresholds.',
       technicalLabel: 'STAGE_05_TELEMETRY_HEALTH',
       checklist: [
         'Real-time CPU/Ram traffic alerts',
-        'Centralized AWS CloudWatch logs',
+        'Unified centralized logging pools',
         'Database cluster scaling thresholds',
         'Ingress controller health checks configured'
       ],
@@ -168,7 +168,7 @@ export default function InteractiveWorkflow() {
               <span>DevOps Operational Flow Integration</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-sans font-bold text-[#F8F8FF] tracking-tight leading-none">
-              How DevShip Takes Infrastructure <br />
+              How Atlas Takes Infrastructure <br />
               <span className="bg-gradient-to-r from-indigo-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">
                 Off Your Plate
               </span>
@@ -445,7 +445,7 @@ export default function InteractiveWorkflow() {
               "Cost Visibility Enabled",
               "Security Controls Implemented",
               "Documentation Delivered",
-              "Full AWS Ownership Retained"
+              "Full Identity Ownership Retained"
             ].map((outcome, idx) => (
               <div key={idx} className="flex items-center space-x-3 text-zinc-300">
                 <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
@@ -463,11 +463,11 @@ export default function InteractiveWorkflow() {
               }}
               className="bg-[#4F6EF7] hover:bg-[#4d69eb] text-white text-xs font-semibold px-8 py-4 rounded-xl flex items-center space-x-2.5 transition-all cursor-pointer shadow-lg shadow-indigo-600/10 pointer-events-auto"
             >
-              <span>Book Your Free AWS Audit</span>
+              <span>Book Discovery Assessment</span>
               <ArrowRight className="w-4 h-4" />
             </button>
             <p className="text-[10px] font-mono text-zinc-500 max-w-sm text-center sm:text-left">
-              * Connect securely with standard NDAs. Receive actionable AWS savings analysis.
+              * Connect securely with standard NDAs. Receive actionable infrastructure optimization and savings analysis.
             </p>
           </div>
 
@@ -503,17 +503,17 @@ function LogsTicker({ stageId }: { stageId: number }) {
     ],
     3: [
       'GIT: Merged PR #421 to mainline: devops/greenfield-vpc [APPROVED]',
-      'IAC: Standard Terraform module loading initiated on secure S3 state backends...',
+      'IAC: Standard Terraform module loading initiated on secure state backends...',
       'PLAN: terraform validate... Syntax verification successful. [OK]',
-      'SEC: tfsec security scanner scanning declarative structures... [0 CVE Alerts Found]',
-      'TERRAFORM APPLY: Adding 18 resource modules... AWS VPC mapped with direct state records.',
+      'SEC: security scanner scanning declarative structures... [0 CVE Alerts Found]',
+      'TERRAFORM APPLY: Adding 18 resource modules... Production segment mapped with direct state records.',
       'COMPLETED: Terraform synchronization complete. Drift tracker operational: 0% drift.'
     ],
     4: [
       'GITHUB_ACTIONS: Executing build container bundle tag v2.4.15...',
       'DOCKER: Packing image modules. Caching Layers... Image compilation successful.',
       'TEST: Running structural package validations, SSL handshakes, and node integrity gates... [PASS]',
-      'DEPLOY: Rolling AWS ECS task pool updates... Terminating outdated containers cleanly.',
+      'DEPLOY: Rolling cluster task pool updates... Terminating outdated containers cleanly.',
       'INTEGRITY: Standard ingress route probe validation: Active connection 200 OK.',
       'COMPLETED: Cluster pipeline finished. Sync finished in 48 seconds.'
     ],
@@ -575,7 +575,7 @@ function LogsTicker({ stageId }: { stageId: number }) {
    ======================================================================================== */
 function StageVisualsPane({ stageId }: { stageId: number }) {
   
-  // RENDER STAGE 1: AWS INFRASTRUCTURE AUDIT (SCANNING)
+  // RENDER STAGE 1: DISCOVERY & AUDIT (SCANNING)
   if (stageId === 1) {
     return <Stage1AuditSim />;
   }
@@ -645,7 +645,7 @@ function Stage1AuditSim() {
       <div className="flex items-center justify-between border-b border-[#1E1E2E]/60 pb-2.5">
         <div className="flex items-center space-x-1.5 font-mono text-[10px] text-zinc-400">
           <Shield className="w-3.5 h-3.5 text-indigo-400 animate-pulse" />
-          <span>CYBER_SCANNER://AWS_ACCOUNT_1298</span>
+          <span>CYBER_SCANNER://REALTIME_ASSET_DISCOVERY</span>
         </div>
         <span className="text-[10px] font-mono text-indigo-400 font-bold capitalize">DISCOVERING...</span>
       </div>
@@ -733,7 +733,7 @@ function Stage2BlueprintSim() {
 
           {/* VPC Boundary box */}
           <rect x="10" y="10" width="380" height="160" rx="6" fill="#111118" fillOpacity="0.4" stroke="#222238" strokeWidth="1.5" strokeDasharray="3 3" />
-          <text x="25" y="28" fill="#52526b" fontSize="8" fontFamily="monospace">AWS_VPC: devship-production-vpc (10.0.0.0/16)</text>
+          <text x="25" y="28" fill="#52526b" fontSize="8" fontFamily="monospace">SEGMENT: atlas-production-net (10.0.0.0/16)</text>
 
           {/* Subnet segregated lines */}
           <line x1="130" y1="40" x2="130" y2="150" stroke="#1f1f2e" strokeWidth="1" strokeDasharray="4 2" />
